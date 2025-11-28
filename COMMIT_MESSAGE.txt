@@ -1,0 +1,38 @@
+feat: Add Docker deployment and GPU server support
+
+Major additions:
+- Complete Docker setup with docker-compose.yml
+- GPU server deployment scripts (28 vCPU, 240GB RAM optimized)
+- Remote build and monitoring tools
+- Comprehensive migration guides
+- Updated documentation structure
+
+Docker Services:
+- MySQL 8.0 with optimized configuration
+- AzerothCore authserver and worldserver
+- Webportal backend (Go) and frontend (React)
+- Resource limits and health checks
+
+Deployment Scripts:
+- deploy-to-gpu-server.sh: Automated deployment
+- gpu-server-setup.sh: Server optimization
+- remote-build.sh: Remote compilation
+- remote-monitor.sh: Remote monitoring
+- docker-export.sh: Project export tool
+
+Documentation:
+- DOCKER_MIGRATION_GUIDE.md: Complete migration steps
+- GPU_SERVER_DEPLOYMENT.md: GPU server setup guide
+- Updated README.md with quick start
+- Organized docs/ directory structure
+
+Configuration:
+- .gitignore: Comprehensive ignore rules
+- .gitattributes: Line ending normalization
+- docker-compose.gpu.yml: GPU-optimized config
+- .dockerignore: Build optimization
+
+Cleanup:
+- Archived old status/report files
+- Removed temporary files
+- Consolidated documentation

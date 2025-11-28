@@ -1,0 +1,35 @@
+# Mortal Warcraft Universal Mastery Trees - Ready for WDBX Editor Import
+# Format: CSV compatible with TalentTab.dbc (3.3.5a - Build 12340)
+#
+# Field Order:
+# ID,Name_Lang_enUS,SpellIconID,RaceMask,ClassMask,PetTalentMask,OrderIndex,BackgroundFile,TabPage
+
+# UNIVERSAL MASTERY TREES (Replace class-specific tabs)
+10001,Warlord,135,0,0,0,0,Interface\TalentFrame\TalentBackground_Warlord.blp,1
+10002,Guardian,134,0,0,0,1,Interface\TalentFrame\TalentBackground_Guardian.blp,2
+10003,Explorer,136,0,0,0,2,Interface\TalentFrame\TalentBackground_Explorer.blp,3
+
+# Notes:
+# - RaceMask = 0 means universal (all races)
+# - ClassMask = 0 means universal (all classes)
+# - PetTalentMask = 0 means not pet-specific
+# - OrderIndex determines tab order (0, 1, 2)
+# - BackgroundFile should point to custom .blp files (or reuse existing ones)
+# - TabPage determines which page this tab appears on
+
+# Icon IDs (approximations, can be changed):
+# 135 - Sword icon (Warlord)
+# 134 - Shield icon (Guardian)
+# 136 - Compass/Map icon (Explorer)
+
+# Existing Background Files (can be reused):
+# Interface\TalentFrame\TalentFramePaladinHoly.blp
+# Interface\TalentFrame\TalentFramePaladinProtection.blp
+# Interface\TalentFrame\TalentFramePaladinRetribution.blp
+
+# For full implementation, you would:
+# 1. Create custom .blp background textures
+# 2. Add them to Patch-Mortal.MPQ
+# 3. Update BackgroundFile paths in this CSV
+# 4. Import into TalentTab.dbc using WDBX Editor
+

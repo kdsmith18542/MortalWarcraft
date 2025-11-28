@@ -1,0 +1,13 @@
+# Mortal Warcraft Overhaul - Configuration Changes
+# Add these to your worldserver.conf
+
+# Systems Audit Fix #4: Disable Random Dungeon Finder (RDF)
+# Teleportation bypasses risk; Role checks fail in Classless systems
+RandomDungeonFinder.Enable = 0
+
+# Mortal Overhaul Settings
+MortalOverhaul.Enable = 1
+MortalOverhaul.MaxSkillPoints = 1200
+MortalOverhaul.SkillPointsPerLevel = 50
+MortalOverhaul.MaxLevel = 25
+

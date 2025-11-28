@@ -1,0 +1,63 @@
+mortal_item_entry,mortal_tier,category,armor_type,slot,role,source_type,source_item_entry,displayid,notes
+700001,M-T1,pve,plate,chest,offense,deadmines,0,,M-T1 Plate Chest (Offense) - Deadmines
+700002,M-T1,pve,plate,chest,defense,deadmines,0,,M-T1 Plate Chest (Defense) - Deadmines
+700003,M-T1,pve,plate,head,offense,deadmines,0,,M-T1 Plate Head (Offense) - Deadmines
+700004,M-T1,pve,plate,legs,offense,deadmines,0,,M-T1 Plate Legs (Offense) - Deadmines
+700005,M-T1,pve,mail,chest,offense,deadmines,0,,M-T1 Mail Chest (Offense) - Deadmines
+700006,M-T1,pve,mail,head,offense,deadmines,0,,M-T1 Mail Head (Offense) - Deadmines
+700007,M-T1,pve,leather,chest,offense,deadmines,0,,M-T1 Leather Chest (Offense) - Deadmines
+700008,M-T1,pve,leather,head,offense,deadmines,0,,M-T1 Leather Head (Offense) - Deadmines
+700009,M-T1,pve,cloth,chest,caster,deadmines,0,,M-T1 Cloth Chest (Caster) - Deadmines
+700010,M-T1,pve,cloth,head,caster,deadmines,0,,M-T1 Cloth Head (Caster) - Deadmines
+700011,M-T2,pve,plate,chest,offense,scholomance,0,,M-T2 Plate Chest (Offense) - Scholomance
+700012,M-T2,pve,plate,head,offense,scholomance,0,,M-T2 Plate Head (Offense) - Scholomance
+700013,M-T2,pve,plate,legs,offense,scholomance,0,,M-T2 Plate Legs (Offense) - Scholomance
+700014,M-T2,pve,mail,chest,offense,scholomance,0,,M-T2 Mail Chest (Offense) - Scholomance
+700015,M-T2,pve,mail,head,offense,scholomance,0,,M-T2 Mail Head (Offense) - Scholomance
+700016,M-T2,pve,leather,chest,offense,scholomance,0,,M-T2 Leather Chest (Offense) - Scholomance
+700017,M-T2,pve,leather,head,offense,scholomance,0,,M-T2 Leather Head (Offense) - Scholomance
+700018,M-T2,pve,cloth,chest,caster,scholomance,0,,M-T2 Cloth Chest (Caster) - Scholomance
+700019,M-T2,pve,cloth,head,caster,scholomance,0,,M-T2 Cloth Head (Caster) - Scholomance
+700020,M-T3,pve,plate,chest,offense,stratholme,0,,M-T3 Plate Chest (Offense) - Stratholme
+700021,M-T3,pve,plate,head,offense,stratholme,0,,M-T3 Plate Head (Offense) - Stratholme
+700022,M-T3,pve,plate,legs,offense,stratholme,0,,M-T3 Plate Legs (Offense) - Stratholme
+700023,M-T3,pve,mail,chest,offense,stratholme,0,,M-T3 Mail Chest (Offense) - Stratholme
+700024,M-T3,pve,mail,head,offense,stratholme,0,,M-T3 Mail Head (Offense) - Stratholme
+700025,M-T3,pve,leather,chest,offense,stratholme,0,,M-T3 Leather Chest (Offense) - Stratholme
+700026,M-T3,pve,leather,head,offense,stratholme,0,,M-T3 Leather Head (Offense) - Stratholme
+700027,M-T3,pve,cloth,chest,caster,stratholme,0,,M-T3 Cloth Chest (Caster) - Stratholme
+700028,M-T3,pve,cloth,head,caster,stratholme,0,,M-T3 Cloth Head (Caster) - Stratholme
+700029,M-T4,pve,plate,chest,offense,ulduar,0,,M-T4 Plate Chest (Offense) - Ulduar
+700030,M-T4,pve,plate,head,offense,ulduar,0,,M-T4 Plate Head (Offense) - Ulduar
+700031,M-T4,pve,plate,legs,offense,ulduar,0,,M-T4 Plate Legs (Offense) - Ulduar
+700032,M-T4,pve,mail,chest,offense,ulduar,0,,M-T4 Mail Chest (Offense) - Ulduar
+700033,M-T4,pve,mail,head,offense,ulduar,0,,M-T4 Mail Head (Offense) - Ulduar
+700034,M-T4,pve,leather,chest,offense,ulduar,0,,M-T4 Leather Chest (Offense) - Ulduar
+700035,M-T4,pve,leather,head,offense,ulduar,0,,M-T4 Leather Head (Offense) - Ulduar
+700036,M-T4,pve,cloth,chest,caster,ulduar,0,,M-T4 Cloth Chest (Caster) - Ulduar
+700037,M-T4,pve,cloth,head,caster,ulduar,0,,M-T4 Cloth Head (Caster) - Ulduar
+700038,M-T5,pve,plate,chest,offense,icc,0,,M-T5 Plate Chest (Offense) - ICC
+700039,M-T5,pve,plate,head,offense,icc,0,,M-T5 Plate Head (Offense) - ICC
+700040,M-T5,pve,plate,legs,offense,icc,0,,M-T5 Plate Legs (Offense) - ICC
+700041,M-T5,pve,mail,chest,offense,icc,0,,M-T5 Mail Chest (Offense) - ICC
+700042,M-T5,pve,mail,head,offense,icc,0,,M-T5 Mail Head (Offense) - ICC
+700043,M-T5,pve,leather,chest,offense,icc,0,,M-T5 Leather Chest (Offense) - ICC
+700044,M-T5,pve,leather,head,offense,icc,0,,M-T5 Leather Head (Offense) - ICC
+700045,M-T5,pve,cloth,chest,caster,icc,0,,M-T5 Cloth Chest (Caster) - ICC
+700046,M-T5,pve,cloth,head,caster,icc,0,,M-T5 Cloth Head (Caster) - ICC
+710001,P1,pvp,plate,chest,offense,arena,0,,P1 PvP Plate Chest (Offense) - Arena
+710002,P1,pvp,plate,head,offense,arena,0,,P1 PvP Plate Head (Offense) - Arena
+710003,P1,pvp,mail,chest,offense,arena,0,,P1 PvP Mail Chest (Offense) - Arena
+710004,P1,pvp,mail,head,offense,arena,0,,P1 PvP Mail Head (Offense) - Arena
+710005,P1,pvp,leather,chest,offense,arena,0,,P1 PvP Leather Chest (Offense) - Arena
+710006,P1,pvp,leather,head,offense,arena,0,,P1 PvP Leather Head (Offense) - Arena
+710007,P1,pvp,cloth,chest,caster,arena,0,,P1 PvP Cloth Chest (Caster) - Arena
+710008,P1,pvp,cloth,head,caster,arena,0,,P1 PvP Cloth Head (Caster) - Arena
+710009,P6,pvp,plate,chest,offense,arena,0,,P6 PvP Plate Chest (Offense) - Arena
+710010,P6,pvp,plate,head,offense,arena,0,,P6 PvP Plate Head (Offense) - Arena
+710011,P6,pvp,mail,chest,offense,arena,0,,P6 PvP Mail Chest (Offense) - Arena
+710012,P6,pvp,mail,head,offense,arena,0,,P6 PvP Mail Head (Offense) - Arena
+710013,P6,pvp,leather,chest,offense,arena,0,,P6 PvP Leather Chest (Offense) - Arena
+710014,P6,pvp,leather,head,offense,arena,0,,P6 PvP Leather Head (Offense) - Arena
+710015,P6,pvp,cloth,chest,caster,arena,0,,P6 PvP Cloth Chest (Caster) - Arena
+710016,P6,pvp,cloth,head,caster,arena,0,,P6 PvP Cloth Head (Caster) - Arena

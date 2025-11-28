@@ -1,0 +1,10 @@
+# Keystone Spells
+# One spell ID per line
+# These spells will receive special handling
+# Add spell IDs that need manual review here
+
+# Example (uncomment and add actual spell IDs):
+# 12345
+# 12346
+# 12347
+

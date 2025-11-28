@@ -1,0 +1,143 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: mortal-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-mwdbpass}
+      MYSQL_DATABASE: azerothcore_auth
+      TZ: UTC
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d:ro
+      - ./db_backup:/backup:ro
+    command: --default-authentication-plugin=mysql_native_password --max_allowed_packet=64M --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-mwdbpass}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mortal-network
+
+  # AzerothCore Auth Server
+  authserver:
+    build:
+      context: ./azerothcore
+      dockerfile: apps/docker/Dockerfile
+      target: authserver
+      args:
+        USER_ID: ${DOCKER_USER_ID:-1000}
+        GROUP_ID: ${DOCKER_GROUP_ID:-1000}
+        DOCKER_USER: ${DOCKER_USER:-acore}
+    container_name: mortal-authserver
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      AC_LOGIN_DATABASE_INFO: "mysql;3306;root;${MYSQL_ROOT_PASSWORD:-mwdbpass};azerothcore_auth"
+      AC_LOGS_DIR: "/azerothcore/env/dist/logs"
+    volumes:
+      - ./azerothcore/env/dist/etc:/azerothcore/env/dist/etc:ro
+      - ./azerothcore/env/dist/logs:/azerothcore/env/dist/logs
+      - ./config:/config:ro
+    networks:
+      - mortal-network
+    ports:
+      - "${AUTHSERVER_PORT:-3724}:3724"
+
+  # AzerothCore World Server
+  worldserver:
+    build:
+      context: ./azerothcore
+      dockerfile: apps/docker/Dockerfile
+      target: worldserver
+      args:
+        USER_ID: ${DOCKER_USER_ID:-1000}
+        GROUP_ID: ${DOCKER_GROUP_ID:-1000}
+        DOCKER_USER: ${DOCKER_USER:-acore}
+    container_name: mortal-worldserver
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    depends_on:
+      mysql:
+        condition: service_healthy
+      authserver:
+        condition: service_started
+    environment:
+      AC_DATA_DIR: "/azerothcore/env/dist/data"
+      AC_LOGS_DIR: "/azerothcore/env/dist/logs"
+      AC_LOGIN_DATABASE_INFO: "mysql;3306;root;${MYSQL_ROOT_PASSWORD:-mwdbpass};azerothcore_auth"
+      AC_WORLD_DATABASE_INFO: "mysql;3306;root;${MYSQL_ROOT_PASSWORD:-mwdbpass};azerothcore_world"
+      AC_CHARACTER_DATABASE_INFO: "mysql;3306;root;${MYSQL_ROOT_PASSWORD:-mwdbpass};azerothcore_characters"
+    volumes:
+      - ./azerothcore/env/dist/etc:/azerothcore/env/dist/etc:ro
+      - ./azerothcore/env/dist/logs:/azerothcore/env/dist/logs
+      - ./azerothcore/env/dist/data:/azerothcore/env/dist/data:ro
+      - ./config:/config:ro
+      - ./azerothcore/bin/lua_scripts:/azerothcore/bin/lua_scripts:ro
+    networks:
+      - mortal-network
+    ports:
+      - "${WORLDSERVER_PORT:-8085}:8085"
+      - "${SOAP_PORT:-7878}:7878"
+
+  # Webportal Backend (Go)
+  webportal-backend:
+    build:
+      context: ./webportal/backend
+      dockerfile: Dockerfile
+    container_name: mortal-webportal-backend
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASS: ${MYSQL_ROOT_PASSWORD:-mwdbpass}
+      DB_NAME: azerothcore_world
+      PORT: ${WEBPORTAL_BACKEND_PORT:-8080}
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+    volumes:
+      - ./webportal/backend:/app:ro
+    networks:
+      - mortal-network
+    ports:
+      - "${WEBPORTAL_BACKEND_PORT:-8080}:8080"
+
+  # Webportal Frontend (React/Node)
+  webportal-frontend:
+    build:
+      context: ./webportal/frontend
+      dockerfile: Dockerfile
+    container_name: mortal-webportal-frontend
+    restart: unless-stopped
+    depends_on:
+      - webportal-backend
+    environment:
+      REACT_APP_API_URL: http://localhost:${WEBPORTAL_BACKEND_PORT:-8080}
+    volumes:
+      - ./webportal/frontend:/app
+      - /app/node_modules
+    networks:
+      - mortal-network
+    ports:
+      - "${WEBPORTAL_FRONTEND_PORT:-3000}:3000"
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  mortal-network:
+    driver: bridge
+

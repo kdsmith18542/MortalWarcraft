@@ -1,0 +1,10 @@
+## Interface: 30300
+## Title: HandyNotes (Embedded)
+## Notes: Minimal HandyNotes implementation for MortalUI map pins
+## Author: Mortal Warcraft Team (Embedded)
+## Version: 1.0.0
+## OptionalDeps: LibStub
+
+..\Libs\LibStub\LibStub.lua
+HandyNotes.lua
+

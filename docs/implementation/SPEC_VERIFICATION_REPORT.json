@@ -1,0 +1,5031 @@
+{
+  "specs_checked": 85,
+  "specs_complete": 8,
+  "specs_partial": 60,
+  "specs_missing": 17,
+  "details": {
+    "00-overview": {
+      "spec_file": "docs/specs/00-overview.md",
+      "spec_name": "00-overview",
+      "spec_num": "00",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "01-progression": {
+      "spec_file": "docs/specs/01-progression.md",
+      "spec_name": "01-progression",
+      "spec_num": "01",
+      "status": "complete",
+      "completion": 100,
+      "lua_files": {
+        "required": [
+          "mentor_system.lua"
+        ],
+        "found": [
+          {
+            "name": "mentor_system.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMentor.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalLevel.h",
+          "MortalCombatSkills.cpp",
+          "MortalGatheringSkills.cpp",
+          "MortalCraftingSkills.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalLevel.h",
+            "path": "src/MortalLevel.h"
+          },
+          {
+            "name": "MortalCombatSkills.cpp",
+            "path": "src/MortalCombatSkills.cpp"
+          },
+          {
+            "name": "MortalGatheringSkills.cpp",
+            "path": "src/MortalGatheringSkills.cpp"
+          },
+          {
+            "name": "MortalCraftingSkills.cpp",
+            "path": "src/MortalCraftingSkills.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "02-combat": {
+      "spec_file": "docs/specs/02-combat.md",
+      "spec_name": "02-combat",
+      "spec_num": "02",
+      "status": "partial",
+      "completion": 88,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalBraceMechanic.cpp",
+          "MortalCombat.cpp",
+          "MortalDamage.h",
+          "MortalLevel.h",
+          "MortalCrimeSystem.cpp",
+          "MortalCriminalContracts.cpp",
+          "MortalOutlawRestrictions.cpp",
+          "MortalBountyPot.cpp",
+          "MortalCombatFlags.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalBraceMechanic.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalBraceMechanic.cpp"
+          },
+          {
+            "name": "MortalCombat.cpp",
+            "path": "src/MortalCombat.cpp"
+          },
+          {
+            "name": "MortalDamage.h",
+            "path": "src/MortalDamage.h"
+          },
+          {
+            "name": "MortalLevel.h",
+            "path": "src/MortalLevel.h"
+          },
+          {
+            "name": "MortalCriminalContracts.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCriminalContracts.cpp"
+          },
+          {
+            "name": "MortalOutlawRestrictions.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalOutlawRestrictions.cpp"
+          },
+          {
+            "name": "MortalBountyPot.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalBountyPot.cpp"
+          },
+          {
+            "name": "MortalCombatFlags.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCombatFlags.cpp"
+          }
+        ],
+        "missing": [
+          "MortalCrimeSystem.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [
+        "src/MortalCombat.cpp",
+        "src/MortalDamage.h",
+        "azerothcore/modules/mortal_overhaul/src/MortalCombat.cpp",
+        "azerothcore/modules/mortal_overhaul/src/MortalDamage.h"
+      ],
+      "issues": [
+        "Missing C++ file: MortalCrimeSystem.cpp"
+      ]
+    },
+    "03-risk-zones": {
+      "spec_file": "docs/specs/03-risk-zones.md",
+      "spec_name": "03-risk-zones",
+      "spec_num": "03",
+      "status": "complete",
+      "completion": 100,
+      "lua_files": {
+        "required": [
+          "risk_signage.lua",
+          "outlaw_restrictions.lua"
+        ],
+        "found": [
+          {
+            "name": "risk_signage.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRiskZoneLogic.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "outlaw_restrictions.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalOutlawRestrictions.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "ZoneRiskHandler.cpp",
+          "OutlawRestrictions.cpp",
+          "PvPHooks.cpp",
+          "MortalZonePvP.cpp"
+        ],
+        "found": [
+          {
+            "name": "ZoneRiskHandler.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/ZoneRiskHandler.cpp"
+          },
+          {
+            "name": "OutlawRestrictions.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalOutlawRestrictions.cpp"
+          },
+          {
+            "name": "PvPHooks.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/PvPHooks.cpp"
+          },
+          {
+            "name": "MortalZonePvP.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalZonePvP.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "04-economy": {
+      "spec_file": "docs/specs/04-economy.md",
+      "spec_name": "04-economy",
+      "spec_num": "04",
+      "status": "partial",
+      "completion": 84,
+      "lua_files": {
+        "required": [
+          "stall_inventory.lua",
+          "player_contract_board.lua",
+          "resource_rotation.lua",
+          "blueprint_usage.lua",
+          "seasonal_events.lua"
+        ],
+        "found": [
+          {
+            "name": "player_contract_board.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalPlayerHousing.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "resource_rotation.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalResourceRotation.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "blueprint_usage.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalBlueprintUsage.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "seasonal_events.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalSeasonalEconomicEvents.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "stall_inventory.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "RegionalBank.cpp",
+          "MortalMarketStalls.cpp",
+          "MortalCourierContracts.cpp",
+          "MortalCaravanSystem.cpp",
+          "Encumbrance.cpp",
+          "EconomyHooks.cpp"
+        ],
+        "found": [
+          {
+            "name": "RegionalBank.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRegionalBank.cpp"
+          },
+          {
+            "name": "MortalMarketStalls.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMarketStalls.cpp"
+          },
+          {
+            "name": "MortalCourierContracts.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCourierContracts.cpp"
+          },
+          {
+            "name": "MortalCaravanSystem.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCaravanSystem.cpp"
+          },
+          {
+            "name": "Encumbrance.cpp",
+            "path": "src/MortalEncumbrance.cpp"
+          }
+        ],
+        "missing": [
+          "EconomyHooks.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: stall_inventory.lua (no C++ or Lua implementation found)",
+        "Missing C++ file: EconomyHooks.cpp"
+      ]
+    },
+    "05-crafting": {
+      "spec_file": "docs/specs/05-crafting.md",
+      "spec_name": "05-crafting",
+      "spec_num": "05",
+      "status": "partial",
+      "completion": 63,
+      "lua_files": {
+        "required": [
+          "procedural_quality.lua"
+        ],
+        "found": [
+          {
+            "name": "procedural_quality.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalProceduralQuality.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalMaterialLore.cpp",
+          "MortalRefiningLogic.cpp",
+          "MortalDurabilityDecay.cpp",
+          "DecayHooks.cpp",
+          "MortalCraft.cpp",
+          "CraftingStats.h",
+          "MortalCraftingWorkstation.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalMaterialLore.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMaterialLore.cpp"
+          },
+          {
+            "name": "MortalRefiningLogic.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRefiningLogic.cpp"
+          },
+          {
+            "name": "MortalDurabilityDecay.cpp",
+            "path": "src/MortalDurabilityDecay.cpp"
+          },
+          {
+            "name": "MortalCraftingWorkstation.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCraftingWorkstation.cpp"
+          }
+        ],
+        "missing": [
+          "DecayHooks.cpp",
+          "MortalCraft.cpp",
+          "CraftingStats.h"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing C++ file: DecayHooks.cpp",
+        "Missing C++ file: MortalCraft.cpp",
+        "Missing C++ file: CraftingStats.h"
+      ]
+    },
+    "06-pve": {
+      "spec_file": "docs/specs/06-pve.md",
+      "spec_name": "06-pve",
+      "spec_num": "06",
+      "status": "complete",
+      "completion": 100,
+      "lua_files": {
+        "required": [
+          "solo_pve_rewards.lua",
+          "public_dungeon_spawns.lua",
+          "altar_rotation.lua",
+          "world_boss_manager.lua",
+          "seasonal_event_controller.lua"
+        ],
+        "found": [
+          {
+            "name": "solo_pve_rewards.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalSoloPvERewards.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "public_dungeon_spawns.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalPublicDungeonSpawns.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "altar_rotation.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalAltarRotation.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "world_boss_manager.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalWorldBosses.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "seasonal_event_controller.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalSeasonalEconomicEvents.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalDelveInstances.cpp",
+          "MortalPublicDungeonAI.cpp",
+          "MortalExtractionArtifact.cpp",
+          "MortalTaskBoard.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalDelveInstances.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalDelveInstances.cpp"
+          },
+          {
+            "name": "MortalPublicDungeonAI.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalPublicDungeonAI.cpp"
+          },
+          {
+            "name": "MortalExtractionArtifact.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalExtractionArtifact.cpp"
+          },
+          {
+            "name": "MortalTaskBoard.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTaskBoard.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "07-mounts": {
+      "spec_file": "docs/specs/07-mounts.md",
+      "spec_name": "07-mounts",
+      "spec_num": "07",
+      "status": "partial",
+      "completion": 63,
+      "lua_files": {
+        "required": [
+          "breeding_system.lua",
+          "genetics_handler.lua",
+          "mount_durability.lua"
+        ],
+        "found": [
+          {
+            "name": "mount_durability.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMountedCombat.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "breeding_system.lua",
+          "genetics_handler.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "MortalCaravanSystem.cpp",
+          "MountHandler.cpp",
+          "MountedCombat.cpp",
+          "Encumbrance.cpp",
+          "MortalLivingMounts.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalCaravanSystem.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCaravanSystem.cpp"
+          },
+          {
+            "name": "MountedCombat.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMountedCombat.cpp"
+          },
+          {
+            "name": "Encumbrance.cpp",
+            "path": "src/MortalEncumbrance.cpp"
+          },
+          {
+            "name": "MortalLivingMounts.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalLivingMounts.cpp"
+          }
+        ],
+        "missing": [
+          "MountHandler.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: breeding_system.lua (no C++ or Lua implementation found)",
+        "Missing: genetics_handler.lua (no C++ or Lua implementation found)",
+        "Missing C++ file: MountHandler.cpp"
+      ]
+    },
+    "08-guilds-sovereignty": {
+      "spec_file": "docs/specs/08-guilds-sovereignty.md",
+      "spec_name": "08-guilds-sovereignty",
+      "spec_num": "08",
+      "status": "partial",
+      "completion": 57,
+      "lua_files": {
+        "required": [
+          "guild_taxation.lua",
+          "alliance_logic.lua"
+        ],
+        "found": [
+          {
+            "name": "guild_taxation.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalGuildTaxation.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "alliance_logic.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalAllianceLogic.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "TerritoryControl.cpp",
+          "StrongholdHandler.cpp",
+          "SiegeHooks.cpp",
+          "GuildWar.cpp",
+          "MortalStrongholdSystem.cpp",
+          "MortalTCPCapture.cpp",
+          "MortalSiegeWindow.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalStrongholdSystem.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalStrongholdSystem.cpp"
+          },
+          {
+            "name": "MortalTCPCapture.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTCPCapture.cpp"
+          },
+          {
+            "name": "MortalSiegeWindow.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalSiegeWindow.cpp"
+          }
+        ],
+        "missing": [
+          "TerritoryControl.cpp",
+          "StrongholdHandler.cpp",
+          "SiegeHooks.cpp",
+          "GuildWar.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/79_mortal_strongholds.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing C++ file: TerritoryControl.cpp",
+        "Missing C++ file: StrongholdHandler.cpp",
+        "Missing C++ file: SiegeHooks.cpp",
+        "Missing C++ file: GuildWar.cpp"
+      ]
+    },
+    "09-social-systems": {
+      "spec_file": "docs/specs/09-social-systems.md",
+      "spec_name": "09-social-systems",
+      "spec_num": "09",
+      "status": "partial",
+      "completion": 40,
+      "lua_files": {
+        "required": [
+          "tavern_games.lua",
+          "gambling_pit_logic.lua",
+          "wager_system.lua",
+          "housing_stub.lua",
+          "criminal_contracts.lua",
+          "discord_integration.lua"
+        ],
+        "found": [
+          {
+            "name": "tavern_games.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTavernGames.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "criminal_contracts.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCriminalContracts.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "discord_integration.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalDiscord.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "gambling_pit_logic.lua",
+          "wager_system.lua",
+          "housing_stub.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "SocialHooks.cpp",
+          "InspectExtensions.cpp"
+        ],
+        "found": [],
+        "missing": [
+          "SocialHooks.cpp",
+          "InspectExtensions.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/68_titles_system.sql",
+        "sql/77_discord_queue.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: gambling_pit_logic.lua (no C++ or Lua implementation found)",
+        "Missing: wager_system.lua (no C++ or Lua implementation found)",
+        "Missing: housing_stub.lua (no C++ or Lua implementation found)",
+        "Missing C++ file: SocialHooks.cpp",
+        "Missing C++ file: InspectExtensions.cpp"
+      ]
+    },
+    "10-crafting-economy": {
+      "spec_file": "docs/specs/10-crafting-economy.md",
+      "spec_name": "10-crafting-economy",
+      "spec_num": "10",
+      "status": "complete",
+      "completion": 100,
+      "lua_files": {
+        "required": [
+          "material_lore_handler.lua",
+          "encumbrance_logic.lua",
+          "dynamic_node_system.lua"
+        ],
+        "found": [
+          {
+            "name": "material_lore_handler.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMaterialLore.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "encumbrance_logic.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalEncumbrance.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "dynamic_node_system.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalDynamicMapPins.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalCraftingWorkstation.cpp",
+          "MortalDurabilityDecay.cpp",
+          "CraftingHooks.cpp",
+          "Encumbrance.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalCraftingWorkstation.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCraftingWorkstation.cpp"
+          },
+          {
+            "name": "MortalDurabilityDecay.cpp",
+            "path": "src/MortalDurabilityDecay.cpp"
+          },
+          {
+            "name": "CraftingHooks.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/CraftingHooks.cpp"
+          },
+          {
+            "name": "Encumbrance.cpp",
+            "path": "src/MortalEncumbrance.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/69_material_properties.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "11-pvp-systems": {
+      "spec_file": "docs/specs/11-pvp-systems.md",
+      "spec_name": "11-pvp-systems",
+      "spec_num": "11",
+      "status": "partial",
+      "completion": 61,
+      "lua_files": {
+        "required": [
+          "notoriety_handler.lua",
+          "corpse_chest.lua",
+          "criminal_logic.lua"
+        ],
+        "found": [
+          {
+            "name": "criminal_logic.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCriminalContracts.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "notoriety_handler.lua",
+          "corpse_chest.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "MortalBountyBoard.cpp",
+          "MortalHellgates.cpp",
+          "MortalPvPSeason.cpp",
+          "PvPHooks.cpp",
+          "CriminalFlags.cpp",
+          "BraceMechanic.cpp",
+          "CombatRewrites.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalBountyBoard.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalBountyBoard.cpp"
+          },
+          {
+            "name": "MortalHellgates.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalHellgates.cpp"
+          },
+          {
+            "name": "MortalPvPSeason.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalPvPSeason.cpp"
+          },
+          {
+            "name": "PvPHooks.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/PvPHooks.cpp"
+          },
+          {
+            "name": "BraceMechanic.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalBraceMechanic.cpp"
+          }
+        ],
+        "missing": [
+          "CriminalFlags.cpp",
+          "CombatRewrites.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/70_pvp_season_scores.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: notoriety_handler.lua (no C++ or Lua implementation found)",
+        "Missing: corpse_chest.lua (no C++ or Lua implementation found)",
+        "Missing C++ file: CriminalFlags.cpp",
+        "Missing C++ file: CombatRewrites.cpp"
+      ]
+    },
+    "12-world-simulation": {
+      "spec_file": "docs/specs/12-world-simulation.md",
+      "spec_name": "12-world-simulation",
+      "spec_num": "12",
+      "status": "partial",
+      "completion": 74,
+      "lua_files": {
+        "required": [
+          "seasonal_world_controller.lua",
+          "dynamic_node_system.lua",
+          "environmental_hazards.lua"
+        ],
+        "found": [
+          {
+            "name": "seasonal_world_controller.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalSeasonalEconomicEvents.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "dynamic_node_system.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalDynamicMapPins.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "environmental_hazards.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalEnvironmentalHazards.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalDynamicEcosystem.cpp",
+          "MortalMigrationController.cpp",
+          "MortalAlphaVariant.cpp",
+          "MortalWeatherController.cpp",
+          "MortalDayNight.cpp",
+          "WeatherHooks.cpp",
+          "DayNightHooks.cpp",
+          "SpawnOverride.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalDynamicEcosystem.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalDynamicEcosystem.cpp"
+          },
+          {
+            "name": "MortalMigrationController.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMigrationController.cpp"
+          },
+          {
+            "name": "MortalAlphaVariant.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalAlphaVariant.cpp"
+          },
+          {
+            "name": "MortalWeatherController.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalWeatherController.cpp"
+          },
+          {
+            "name": "MortalDayNight.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalDayNight.cpp"
+          }
+        ],
+        "missing": [
+          "WeatherHooks.cpp",
+          "DayNightHooks.cpp",
+          "SpawnOverride.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing C++ file: WeatherHooks.cpp",
+        "Missing C++ file: DayNightHooks.cpp",
+        "Missing C++ file: SpawnOverride.cpp"
+      ]
+    },
+    "13-caravans-contracts": {
+      "spec_file": "docs/specs/13-caravans-contracts.md",
+      "spec_name": "13-caravans-contracts",
+      "spec_num": "13",
+      "status": "partial",
+      "completion": 57,
+      "lua_files": {
+        "required": [
+          "smuggler_routes.lua",
+          "pack_animal_handler.lua",
+          "caravan_event_controller.lua"
+        ],
+        "found": [
+          {
+            "name": "smuggler_routes.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalSmugglerRoutes.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "caravan_event_controller.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCaravanEventController.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "pack_animal_handler.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "MortalCourierContracts.cpp",
+          "MortalCaravanMovement.cpp",
+          "MortalAmbushSpawner.cpp",
+          "CaravanHooks.cpp",
+          "ContractHooks.cpp",
+          "AmbushLogic.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalCourierContracts.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCourierContracts.cpp"
+          },
+          {
+            "name": "MortalCaravanMovement.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCaravanMovement.cpp"
+          },
+          {
+            "name": "MortalAmbushSpawner.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalAmbushSpawner.cpp"
+          }
+        ],
+        "missing": [
+          "CaravanHooks.cpp",
+          "ContractHooks.cpp",
+          "AmbushLogic.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/75_caravan_wagon_stats.sql",
+        "sql/73_caravan_upgrades.sql",
+        "sql/76_contract_crates.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: pack_animal_handler.lua (no C++ or Lua implementation found)",
+        "Missing C++ file: CaravanHooks.cpp",
+        "Missing C++ file: ContractHooks.cpp",
+        "Missing C++ file: AmbushLogic.cpp"
+      ]
+    },
+    "14-admin-tools": {
+      "spec_file": "docs/specs/14-admin-tools.md",
+      "spec_name": "14-admin-tools",
+      "spec_num": "14",
+      "status": "partial",
+      "completion": 47,
+      "lua_files": {
+        "required": [
+          "admin_panel.lua",
+          "admin_panel_ui.lua",
+          "mod_sandbox_watchdog.lua",
+          "analytics_collector.lua",
+          "live_balance.lua",
+          "error_reporter.lua"
+        ],
+        "found": [
+          {
+            "name": "admin_panel.lua",
+            "path": "lua/admin_panel.lua",
+            "note": "Lua implementation"
+          },
+          {
+            "name": "analytics_collector.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalAnalytics.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "live_balance.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalLiveBalance.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "error_reporter.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalErrorReporter.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "admin_panel_ui.lua",
+          "mod_sandbox_watchdog.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "AdminHooks.cpp",
+          "LogHooks.cpp",
+          "AnalyticsHooks.cpp"
+        ],
+        "found": [],
+        "missing": [
+          "AdminHooks.cpp",
+          "LogHooks.cpp",
+          "AnalyticsHooks.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": true,
+      "sql_mentions": [
+        "sql/71_gm_roles_permissions.sql",
+        "sql/78_analytics_export.sql",
+        "sql/74_feature_flags.sql",
+        "sql/72_logging_system.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: admin_panel_ui.lua (no C++ or Lua implementation found)",
+        "Missing: mod_sandbox_watchdog.lua (no C++ or Lua implementation found)",
+        "Missing C++ file: AdminHooks.cpp",
+        "Missing C++ file: LogHooks.cpp",
+        "Missing C++ file: AnalyticsHooks.cpp"
+      ]
+    },
+    "15-ui-client": {
+      "spec_file": "docs/specs/15-ui-client.md",
+      "spec_name": "15-ui-client",
+      "spec_num": "15",
+      "status": "partial",
+      "completion": 99,
+      "lua_files": {
+        "required": [
+          "MortalUI.lua",
+          "config_enforcer.lua",
+          "ui_map_pins.lua",
+          "ui_nameplate_driver.lua",
+          "ui_tooltip_injector.lua",
+          "ui_stats_overlay.lua",
+          "ui_hunger_display.lua",
+          "ui_encumbrance_display.lua",
+          "ui_crime_status.lua",
+          "ui_risk_zone_banner.lua"
+        ],
+        "found": [
+          {
+            "name": "MortalUI.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_map_pins.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_nameplate_driver.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_tooltip_injector.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_stats_overlay.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_hunger_display.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_encumbrance_display.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_crime_status.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_risk_zone_banner.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "config_enforcer.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: config_enforcer.lua (no C++ or Lua implementation found)"
+      ]
+    },
+    "16-database-schema": {
+      "spec_file": "docs/specs/16-database-schema.md",
+      "spec_name": "16-database-schema",
+      "spec_num": "16",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "id",
+          "guid",
+          "skill_id",
+          "value",
+          "max_value",
+          "last_gain_time",
+          "material_id",
+          "lore_level",
+          "last_studied",
+          "warlord_points",
+          "guardian_points",
+          "explorer_points",
+          "unspent_points",
+          "strength",
+          "agility",
+          "stamina",
+          "intellect",
+          "spirit",
+          "total_attributes",
+          "derived_level",
+          "last_recalc",
+          "region_id",
+          "slot",
+          "item_guid",
+          "item_count",
+          "owner_guid",
+          "stall_npc_entry",
+          "rent_expiry",
+          "tax_rate",
+          "title",
+          "stall_id",
+          "item_template",
+          "quantity",
+          "price",
+          "time_added",
+          "name",
+          "family",
+          "hardness",
+          "flexibility",
+          "weight",
+          "conductivity",
+          "purity",
+          "tier",
+          "component_type",
+          "quality_tier",
+          "base_item_template",
+          "created_by",
+          "created_at",
+          "is_original",
+          "max_uses",
+          "craft_type",
+          "output_item_template",
+          "required_skill",
+          "required_skill_level",
+          "notes",
+          "weight_class",
+          "courier_guid",
+          "origin_region_id",
+          "destination_region_id",
+          "crate_id",
+          "collateral_amount",
+          "reward_amount",
+          "deadline",
+          "status",
+          "accepted_at",
+          "completed_at",
+          "item_container_id",
+          "contract_id",
+          "wagon_type",
+          "current_zone",
+          "pos_x",
+          "pos_y",
+          "health",
+          "max_health",
+          "mortal_item_entry",
+          "mortal_tier",
+          "category",
+          "armor_type",
+          "source_type",
+          "source_item_entry",
+          "displayid",
+          "mortal_mount_tier",
+          "speed_multiplier",
+          "capacity_slots",
+          "source_spell_id",
+          "source_creature_id",
+          "companion_guid",
+          "companion_type",
+          "hunger",
+          "bond",
+          "last_update",
+          "role",
+          "base_gear_tier",
+          "creature_entry",
+          "base_wage",
+          "max_bond_bonus",
+          "merc_template_id",
+          "merc_creature_guid",
+          "start_time",
+          "end_time",
+          "active",
+          "last_paid_time",
+          "daily_wage",
+          "notoriety_score",
+          "last_crime_time",
+          "outlaw_since",
+          "target_guid",
+          "posted_by_guid",
+          "bounty_amount",
+          "expires_at",
+          "is_active",
+          "bounty_id",
+          "killer_guid",
+          "claimed_at",
+          "victim_guid",
+          "zone_id",
+          "risk_tier",
+          "time",
+          "loot_value",
+          "flags",
+          "map_id",
+          "guild_id",
+          "level",
+          "treasury_gold",
+          "last_siege_time",
+          "mortal_tcp",
+          "controlling_guild_id",
+          "last_flip_time",
+          "influence_value",
+          "season_id",
+          "territory_score",
+          "siege_wins",
+          "caravans_escorted",
+          "events_participated",
+          "rank_position",
+          "guild_id_a",
+          "guild_id_b",
+          "updated_at",
+          "action_type",
+          "amount",
+          "details",
+          "gm_guid",
+          "action",
+          "event_type",
+          "last_modified",
+          "predator_entry",
+          "prey_entry",
+          "pressure_factor",
+          "current_season",
+          "season_start",
+          "season_end",
+          "data",
+          "requirements",
+          "title_id",
+          "unlocked_at",
+          "bio_text",
+          "rp_tags",
+          "key"
+        ],
+        "found": [],
+        "missing": [
+          "id",
+          "guid",
+          "skill_id",
+          "value",
+          "max_value",
+          "last_gain_time",
+          "material_id",
+          "lore_level",
+          "last_studied",
+          "warlord_points",
+          "guardian_points",
+          "explorer_points",
+          "unspent_points",
+          "strength",
+          "agility",
+          "stamina",
+          "intellect",
+          "spirit",
+          "total_attributes",
+          "derived_level",
+          "last_recalc",
+          "region_id",
+          "slot",
+          "item_guid",
+          "item_count",
+          "owner_guid",
+          "stall_npc_entry",
+          "rent_expiry",
+          "tax_rate",
+          "title",
+          "stall_id",
+          "item_template",
+          "quantity",
+          "price",
+          "time_added",
+          "name",
+          "family",
+          "hardness",
+          "flexibility",
+          "weight",
+          "conductivity",
+          "purity",
+          "tier",
+          "component_type",
+          "quality_tier",
+          "base_item_template",
+          "created_by",
+          "created_at",
+          "is_original",
+          "max_uses",
+          "craft_type",
+          "output_item_template",
+          "required_skill",
+          "required_skill_level",
+          "notes",
+          "weight_class",
+          "courier_guid",
+          "origin_region_id",
+          "destination_region_id",
+          "crate_id",
+          "collateral_amount",
+          "reward_amount",
+          "deadline",
+          "status",
+          "accepted_at",
+          "completed_at",
+          "item_container_id",
+          "contract_id",
+          "wagon_type",
+          "current_zone",
+          "pos_x",
+          "pos_y",
+          "health",
+          "max_health",
+          "mortal_item_entry",
+          "mortal_tier",
+          "category",
+          "armor_type",
+          "source_type",
+          "source_item_entry",
+          "displayid",
+          "mortal_mount_tier",
+          "speed_multiplier",
+          "capacity_slots",
+          "source_spell_id",
+          "source_creature_id",
+          "companion_guid",
+          "companion_type",
+          "hunger",
+          "bond",
+          "last_update",
+          "role",
+          "base_gear_tier",
+          "creature_entry",
+          "base_wage",
+          "max_bond_bonus",
+          "merc_template_id",
+          "merc_creature_guid",
+          "start_time",
+          "end_time",
+          "active",
+          "last_paid_time",
+          "daily_wage",
+          "notoriety_score",
+          "last_crime_time",
+          "outlaw_since",
+          "target_guid",
+          "posted_by_guid",
+          "bounty_amount",
+          "expires_at",
+          "is_active",
+          "bounty_id",
+          "killer_guid",
+          "claimed_at",
+          "victim_guid",
+          "zone_id",
+          "risk_tier",
+          "time",
+          "loot_value",
+          "flags",
+          "map_id",
+          "guild_id",
+          "level",
+          "treasury_gold",
+          "last_siege_time",
+          "mortal_tcp",
+          "controlling_guild_id",
+          "last_flip_time",
+          "influence_value",
+          "season_id",
+          "territory_score",
+          "siege_wins",
+          "caravans_escorted",
+          "events_participated",
+          "rank_position",
+          "guild_id_a",
+          "guild_id_b",
+          "updated_at",
+          "action_type",
+          "amount",
+          "details",
+          "gm_guid",
+          "action",
+          "event_type",
+          "last_modified",
+          "predator_entry",
+          "prey_entry",
+          "pressure_factor",
+          "current_season",
+          "season_start",
+          "season_end",
+          "data",
+          "requirements",
+          "title_id",
+          "unlocked_at",
+          "bio_text",
+          "rp_tags",
+          "key"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: id",
+        "Missing SQL table: guid",
+        "Missing SQL table: skill_id",
+        "Missing SQL table: value",
+        "Missing SQL table: max_value",
+        "Missing SQL table: last_gain_time",
+        "Missing SQL table: material_id",
+        "Missing SQL table: lore_level",
+        "Missing SQL table: last_studied",
+        "Missing SQL table: warlord_points",
+        "Missing SQL table: guardian_points",
+        "Missing SQL table: explorer_points",
+        "Missing SQL table: unspent_points",
+        "Missing SQL table: strength",
+        "Missing SQL table: agility",
+        "Missing SQL table: stamina",
+        "Missing SQL table: intellect",
+        "Missing SQL table: spirit",
+        "Missing SQL table: total_attributes",
+        "Missing SQL table: derived_level",
+        "Missing SQL table: last_recalc",
+        "Missing SQL table: region_id",
+        "Missing SQL table: slot",
+        "Missing SQL table: item_guid",
+        "Missing SQL table: item_count",
+        "Missing SQL table: owner_guid",
+        "Missing SQL table: stall_npc_entry",
+        "Missing SQL table: rent_expiry",
+        "Missing SQL table: tax_rate",
+        "Missing SQL table: title",
+        "Missing SQL table: stall_id",
+        "Missing SQL table: item_template",
+        "Missing SQL table: quantity",
+        "Missing SQL table: price",
+        "Missing SQL table: time_added",
+        "Missing SQL table: name",
+        "Missing SQL table: family",
+        "Missing SQL table: hardness",
+        "Missing SQL table: flexibility",
+        "Missing SQL table: weight",
+        "Missing SQL table: conductivity",
+        "Missing SQL table: purity",
+        "Missing SQL table: tier",
+        "Missing SQL table: component_type",
+        "Missing SQL table: quality_tier",
+        "Missing SQL table: base_item_template",
+        "Missing SQL table: created_by",
+        "Missing SQL table: created_at",
+        "Missing SQL table: is_original",
+        "Missing SQL table: max_uses",
+        "Missing SQL table: craft_type",
+        "Missing SQL table: output_item_template",
+        "Missing SQL table: required_skill",
+        "Missing SQL table: required_skill_level",
+        "Missing SQL table: notes",
+        "Missing SQL table: weight_class",
+        "Missing SQL table: courier_guid",
+        "Missing SQL table: origin_region_id",
+        "Missing SQL table: destination_region_id",
+        "Missing SQL table: crate_id",
+        "Missing SQL table: collateral_amount",
+        "Missing SQL table: reward_amount",
+        "Missing SQL table: deadline",
+        "Missing SQL table: status",
+        "Missing SQL table: accepted_at",
+        "Missing SQL table: completed_at",
+        "Missing SQL table: item_container_id",
+        "Missing SQL table: contract_id",
+        "Missing SQL table: wagon_type",
+        "Missing SQL table: current_zone",
+        "Missing SQL table: pos_x",
+        "Missing SQL table: pos_y",
+        "Missing SQL table: health",
+        "Missing SQL table: max_health",
+        "Missing SQL table: mortal_item_entry",
+        "Missing SQL table: mortal_tier",
+        "Missing SQL table: category",
+        "Missing SQL table: armor_type",
+        "Missing SQL table: source_type",
+        "Missing SQL table: source_item_entry",
+        "Missing SQL table: displayid",
+        "Missing SQL table: mortal_mount_tier",
+        "Missing SQL table: speed_multiplier",
+        "Missing SQL table: capacity_slots",
+        "Missing SQL table: source_spell_id",
+        "Missing SQL table: source_creature_id",
+        "Missing SQL table: companion_guid",
+        "Missing SQL table: companion_type",
+        "Missing SQL table: hunger",
+        "Missing SQL table: bond",
+        "Missing SQL table: last_update",
+        "Missing SQL table: role",
+        "Missing SQL table: base_gear_tier",
+        "Missing SQL table: creature_entry",
+        "Missing SQL table: base_wage",
+        "Missing SQL table: max_bond_bonus",
+        "Missing SQL table: merc_template_id",
+        "Missing SQL table: merc_creature_guid",
+        "Missing SQL table: start_time",
+        "Missing SQL table: end_time",
+        "Missing SQL table: active",
+        "Missing SQL table: last_paid_time",
+        "Missing SQL table: daily_wage",
+        "Missing SQL table: notoriety_score",
+        "Missing SQL table: last_crime_time",
+        "Missing SQL table: outlaw_since",
+        "Missing SQL table: target_guid",
+        "Missing SQL table: posted_by_guid",
+        "Missing SQL table: bounty_amount",
+        "Missing SQL table: expires_at",
+        "Missing SQL table: is_active",
+        "Missing SQL table: bounty_id",
+        "Missing SQL table: killer_guid",
+        "Missing SQL table: claimed_at",
+        "Missing SQL table: victim_guid",
+        "Missing SQL table: zone_id",
+        "Missing SQL table: risk_tier",
+        "Missing SQL table: time",
+        "Missing SQL table: loot_value",
+        "Missing SQL table: flags",
+        "Missing SQL table: map_id",
+        "Missing SQL table: guild_id",
+        "Missing SQL table: level",
+        "Missing SQL table: treasury_gold",
+        "Missing SQL table: last_siege_time",
+        "Missing SQL table: mortal_tcp",
+        "Missing SQL table: controlling_guild_id",
+        "Missing SQL table: last_flip_time",
+        "Missing SQL table: influence_value",
+        "Missing SQL table: season_id",
+        "Missing SQL table: territory_score",
+        "Missing SQL table: siege_wins",
+        "Missing SQL table: caravans_escorted",
+        "Missing SQL table: events_participated",
+        "Missing SQL table: rank_position",
+        "Missing SQL table: guild_id_a",
+        "Missing SQL table: guild_id_b",
+        "Missing SQL table: updated_at",
+        "Missing SQL table: action_type",
+        "Missing SQL table: amount",
+        "Missing SQL table: details",
+        "Missing SQL table: gm_guid",
+        "Missing SQL table: action",
+        "Missing SQL table: event_type",
+        "Missing SQL table: last_modified",
+        "Missing SQL table: predator_entry",
+        "Missing SQL table: prey_entry",
+        "Missing SQL table: pressure_factor",
+        "Missing SQL table: current_season",
+        "Missing SQL table: season_start",
+        "Missing SQL table: season_end",
+        "Missing SQL table: data",
+        "Missing SQL table: requirements",
+        "Missing SQL table: title_id",
+        "Missing SQL table: unlocked_at",
+        "Missing SQL table: bio_text",
+        "Missing SQL table: rp_tags",
+        "Missing SQL table: key"
+      ]
+    },
+    "17-implementation-roadmap": {
+      "spec_file": "docs/specs/17-implementation-roadmap.md",
+      "spec_name": "17-implementation-roadmap",
+      "spec_num": "17",
+      "status": "partial",
+      "completion": 71,
+      "lua_files": {
+        "required": [
+          "hunger_stub.lua",
+          "encumbrance_stub.lua",
+          "ui_stats_overlay.lua",
+          "ui_hunger_display.lua",
+          "ui_encumbrance_display.lua",
+          "corpse_chest.lua",
+          "ui_risk_zone_banner.lua",
+          "simple_gold_sinks.lua",
+          "public_dungeon_spawns.lua",
+          "notoriety_handler.lua",
+          "ui_crime_status.lua",
+          "guild_taxation.lua",
+          "tavern_games.lua",
+          "wager_system.lua",
+          "criminal_contracts.lua",
+          "discord_integration.lua",
+          "ui_nameplate_driver.lua",
+          "ui_map_pins.lua",
+          "config_enforcer.lua",
+          "admin_panel.lua",
+          "mod_sandbox_watchdog.lua",
+          "analytics_collector.lua",
+          "live_balance.lua"
+        ],
+        "found": [
+          {
+            "name": "encumbrance_stub.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalEncumbrance.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_stats_overlay.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_hunger_display.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_encumbrance_display.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_risk_zone_banner.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "public_dungeon_spawns.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalPublicDungeonSpawns.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_crime_status.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "guild_taxation.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalGuildTaxation.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "tavern_games.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTavernGames.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "criminal_contracts.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCriminalContracts.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "discord_integration.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalDiscord.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_nameplate_driver.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_map_pins.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "admin_panel.lua",
+            "path": "lua/admin_panel.lua",
+            "note": "Lua implementation"
+          },
+          {
+            "name": "analytics_collector.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalAnalytics.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "live_balance.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalLiveBalance.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "hunger_stub.lua",
+          "corpse_chest.lua",
+          "simple_gold_sinks.lua",
+          "notoriety_handler.lua",
+          "wager_system.lua",
+          "config_enforcer.lua",
+          "mod_sandbox_watchdog.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "MortalHooks.cpp",
+          "MortalLevel.h",
+          "MortalCombatSkills.cpp",
+          "ZoneRiskHandler.cpp",
+          "PvPHooks.cpp",
+          "MortalRiskZoneLogic.cpp",
+          "MortalMarketStalls.cpp",
+          "CraftingHooks.cpp",
+          "MortalCraftingWorkstation.cpp",
+          "MortalDurabilityDecay.cpp",
+          "MortalDynamicEcosystem.cpp",
+          "MortalTaskBoard.cpp",
+          "SpawnOverride.cpp",
+          "CriminalFlags.cpp",
+          "BraceMechanic.cpp",
+          "MortalBountyBoard.cpp",
+          "MortalHellgates.cpp",
+          "StrongholdHandler.cpp",
+          "TerritoryControl.cpp",
+          "SiegeHooks.cpp",
+          "MortalStrongholdSystem.cpp",
+          "MortalTCPCapture.cpp",
+          "CaravanHooks.cpp",
+          "ContractHooks.cpp",
+          "MortalCourierContracts.cpp",
+          "MortalCaravanMovement.cpp",
+          "MortalAmbushSpawner.cpp",
+          "AdminHooks.cpp",
+          "LogHooks.cpp",
+          "AnalyticsHooks.cpp",
+          "MortalLevel.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalHooks.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalHooks.cpp"
+          },
+          {
+            "name": "MortalLevel.h",
+            "path": "src/MortalLevel.h"
+          },
+          {
+            "name": "MortalCombatSkills.cpp",
+            "path": "src/MortalCombatSkills.cpp"
+          },
+          {
+            "name": "ZoneRiskHandler.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/ZoneRiskHandler.cpp"
+          },
+          {
+            "name": "PvPHooks.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/PvPHooks.cpp"
+          },
+          {
+            "name": "MortalRiskZoneLogic.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRiskZoneLogic.cpp"
+          },
+          {
+            "name": "MortalMarketStalls.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMarketStalls.cpp"
+          },
+          {
+            "name": "CraftingHooks.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/CraftingHooks.cpp"
+          },
+          {
+            "name": "MortalCraftingWorkstation.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCraftingWorkstation.cpp"
+          },
+          {
+            "name": "MortalDurabilityDecay.cpp",
+            "path": "src/MortalDurabilityDecay.cpp"
+          },
+          {
+            "name": "MortalDynamicEcosystem.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalDynamicEcosystem.cpp"
+          },
+          {
+            "name": "MortalTaskBoard.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTaskBoard.cpp"
+          },
+          {
+            "name": "BraceMechanic.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalBraceMechanic.cpp"
+          },
+          {
+            "name": "MortalBountyBoard.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalBountyBoard.cpp"
+          },
+          {
+            "name": "MortalHellgates.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalHellgates.cpp"
+          },
+          {
+            "name": "MortalStrongholdSystem.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalStrongholdSystem.cpp"
+          },
+          {
+            "name": "MortalTCPCapture.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTCPCapture.cpp"
+          },
+          {
+            "name": "MortalCourierContracts.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCourierContracts.cpp"
+          },
+          {
+            "name": "MortalCaravanMovement.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCaravanMovement.cpp"
+          },
+          {
+            "name": "MortalAmbushSpawner.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalAmbushSpawner.cpp"
+          },
+          {
+            "name": "MortalLevel.cpp",
+            "path": "src/MortalLevel.cpp"
+          }
+        ],
+        "missing": [
+          "SpawnOverride.cpp",
+          "CriminalFlags.cpp",
+          "StrongholdHandler.cpp",
+          "TerritoryControl.cpp",
+          "SiegeHooks.cpp",
+          "CaravanHooks.cpp",
+          "ContractHooks.cpp",
+          "AdminHooks.cpp",
+          "LogHooks.cpp",
+          "AnalyticsHooks.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [
+          "mortal_derived_level_cache"
+        ],
+        "found": [
+          {
+            "name": "mortal_derived_level_cache",
+            "path": "sql/57_character_attributes.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": true,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: hunger_stub.lua (no C++ or Lua implementation found)",
+        "Missing: corpse_chest.lua (no C++ or Lua implementation found)",
+        "Missing: simple_gold_sinks.lua (no C++ or Lua implementation found)",
+        "Missing: notoriety_handler.lua (no C++ or Lua implementation found)",
+        "Missing: wager_system.lua (no C++ or Lua implementation found)",
+        "Missing: config_enforcer.lua (no C++ or Lua implementation found)",
+        "Missing: mod_sandbox_watchdog.lua (no C++ or Lua implementation found)",
+        "Missing C++ file: SpawnOverride.cpp",
+        "Missing C++ file: CriminalFlags.cpp",
+        "Missing C++ file: StrongholdHandler.cpp",
+        "Missing C++ file: TerritoryControl.cpp",
+        "Missing C++ file: SiegeHooks.cpp",
+        "Missing C++ file: CaravanHooks.cpp",
+        "Missing C++ file: ContractHooks.cpp",
+        "Missing C++ file: AdminHooks.cpp",
+        "Missing C++ file: LogHooks.cpp",
+        "Missing C++ file: AnalyticsHooks.cpp"
+      ]
+    },
+    "18-lfg-warfront-ui": {
+      "spec_file": "docs/specs/18-lfg-warfront-ui.md",
+      "spec_name": "18-lfg-warfront-ui",
+      "spec_num": "18",
+      "status": "partial",
+      "completion": 29,
+      "lua_files": {
+        "required": [
+          "tavern_lfg_gossip.lua",
+          "ui_lfg_panel.lua",
+          "ui_pvp_panel.lua",
+          "ui_map_pins.lua",
+          "warfront_state.lua"
+        ],
+        "found": [
+          {
+            "name": "tavern_lfg_gossip.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTavernLFG.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_lfg_panel.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_pvp_panel.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_map_pins.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "warfront_state.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalWarfrontState.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalLFGSystem.cpp",
+          "MortalHellgates.cpp",
+          "MortalPvPSeason.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalLFGSystem.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalLFGSystem.cpp"
+          },
+          {
+            "name": "MortalHellgates.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalHellgates.cpp"
+          },
+          {
+            "name": "MortalPvPSeason.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalPvPSeason.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "id",
+          "leader_guid",
+          "content_type",
+          "content_tag",
+          "title",
+          "required_role_flags",
+          "min_derived_level",
+          "max_group_size",
+          "current_member_count",
+          "notes",
+          "created_at",
+          "last_updated",
+          "is_active",
+          "listing_id",
+          "guid",
+          "role_flags",
+          "joined_at",
+          "mortal_warfronts",
+          "mortal_hellgate_status",
+          "mortal_pvp_season_scores",
+          "mortal_warfront_state",
+          "name",
+          "map_id",
+          "portal_zone_id",
+          "portal_pos_x",
+          "portal_pos_y",
+          "controlling_guild_id",
+          "status",
+          "next_open_time",
+          "last_result"
+        ],
+        "found": [
+          {
+            "name": "mortal_hellgate_status",
+            "path": "sql/60_hellgate_status.sql"
+          },
+          {
+            "name": "mortal_pvp_season_scores",
+            "path": "sql/70_pvp_season_scores.sql"
+          },
+          {
+            "name": "mortal_warfront_state",
+            "path": "sql/59_warfront_state.sql"
+          }
+        ],
+        "missing": [
+          "id",
+          "leader_guid",
+          "content_type",
+          "content_tag",
+          "title",
+          "required_role_flags",
+          "min_derived_level",
+          "max_group_size",
+          "current_member_count",
+          "notes",
+          "created_at",
+          "last_updated",
+          "is_active",
+          "listing_id",
+          "guid",
+          "role_flags",
+          "joined_at",
+          "mortal_warfronts",
+          "name",
+          "map_id",
+          "portal_zone_id",
+          "portal_pos_x",
+          "portal_pos_y",
+          "controlling_guild_id",
+          "status",
+          "next_open_time",
+          "last_result"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/80_mortal_lfg_system.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: id",
+        "Missing SQL table: leader_guid",
+        "Missing SQL table: content_type",
+        "Missing SQL table: content_tag",
+        "Missing SQL table: title",
+        "Missing SQL table: required_role_flags",
+        "Missing SQL table: min_derived_level",
+        "Missing SQL table: max_group_size",
+        "Missing SQL table: current_member_count",
+        "Missing SQL table: notes",
+        "Missing SQL table: created_at",
+        "Missing SQL table: last_updated",
+        "Missing SQL table: is_active",
+        "Missing SQL table: listing_id",
+        "Missing SQL table: guid",
+        "Missing SQL table: role_flags",
+        "Missing SQL table: joined_at",
+        "Missing SQL table: mortal_warfronts",
+        "Missing SQL table: name",
+        "Missing SQL table: map_id",
+        "Missing SQL table: portal_zone_id",
+        "Missing SQL table: portal_pos_x",
+        "Missing SQL table: portal_pos_y",
+        "Missing SQL table: controlling_guild_id",
+        "Missing SQL table: status",
+        "Missing SQL table: next_open_time",
+        "Missing SQL table: last_result"
+      ]
+    },
+    "19-itemization": {
+      "spec_file": "docs/specs/19-itemization.md",
+      "spec_name": "19-itemization",
+      "spec_num": "19",
+      "status": "partial",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "item_template",
+          "mortal_tier",
+          "source_category",
+          "new_reward_type",
+          "new_reward_ref",
+          "replacement_type",
+          "replacement_ref",
+          "reward_type"
+        ],
+        "found": [],
+        "missing": [
+          "item_template",
+          "mortal_tier",
+          "source_category",
+          "new_reward_type",
+          "new_reward_ref",
+          "replacement_type",
+          "replacement_ref",
+          "reward_type"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/118_itemization_etl_foundation.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: item_template",
+        "Missing SQL table: mortal_tier",
+        "Missing SQL table: source_category",
+        "Missing SQL table: new_reward_type",
+        "Missing SQL table: new_reward_ref",
+        "Missing SQL table: replacement_type",
+        "Missing SQL table: replacement_ref",
+        "Missing SQL table: reward_type"
+      ]
+    },
+    "20-aio-ui-basics": {
+      "spec_file": "docs/specs/20-aio-ui-basics.md",
+      "spec_name": "20-aio-ui-basics",
+      "spec_num": "20",
+      "status": "partial",
+      "completion": 64,
+      "lua_files": {
+        "required": [
+          "AIO.lua",
+          "AIO_Handlers.lua",
+          "init.lua",
+          "contracts_ui.lua",
+          "market_ui.lua",
+          "bounty_ui.lua",
+          "mentor_ui.lua",
+          "admin_ui.lua",
+          "MortalUI.lua",
+          "contracts_npc.lua"
+        ],
+        "found": [
+          {
+            "name": "AIO.lua",
+            "path": "azerothcore/modules/mortal_overhaul/lua/AIO_Server/AIO.lua",
+            "note": "Lua implementation"
+          },
+          {
+            "name": "init.lua",
+            "path": "lua/aio/init.lua",
+            "note": "Lua implementation"
+          },
+          {
+            "name": "market_ui.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMarketStalls.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "bounty_ui.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalBountyPot.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "mentor_ui.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMentor.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "MortalUI.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "AIO_Handlers.lua",
+          "contracts_ui.lua",
+          "admin_ui.lua",
+          "contracts_npc.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": true,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: AIO_Handlers.lua (no C++ or Lua implementation found)",
+        "Missing: contracts_ui.lua (no C++ or Lua implementation found)",
+        "Missing: admin_ui.lua (no C++ or Lua implementation found)",
+        "Missing: contracts_npc.lua (no C++ or Lua implementation found)"
+      ]
+    },
+    "21-elden-systems": {
+      "spec_file": "docs/specs/21-elden-systems.md",
+      "spec_name": "21-elden-systems",
+      "spec_num": "21",
+      "status": "partial",
+      "completion": 15,
+      "lua_files": {
+        "required": [
+          "rune_engraving.lua",
+          "rune_engraving_ui.lua",
+          "guard_counter.lua",
+          "ui_guard_counter.lua"
+        ],
+        "found": [
+          {
+            "name": "rune_engraving.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRunes.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "rune_engraving_ui.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRunes.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_guard_counter.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "guard_counter.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "MortalFlask.h",
+          "MortalHooks.cpp",
+          "MortalFlask.cpp",
+          "MortalRunes.h",
+          "MortalGuardCounter.h"
+        ],
+        "found": [
+          {
+            "name": "MortalHooks.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalHooks.cpp"
+          },
+          {
+            "name": "MortalRunes.h",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRunes.h"
+          }
+        ],
+        "missing": [
+          "MortalFlask.h",
+          "MortalFlask.cpp",
+          "MortalGuardCounter.h"
+        ]
+      },
+      "sql_tables": {
+        "required": [
+          "item_crimson_phial",
+          "SPELL_CRIMSON_PHIAL",
+          "guid",
+          "max_charges",
+          "current_charges",
+          "last_refill_time",
+          "rune_id",
+          "name",
+          "spell_id",
+          "weapon_type_mask",
+          "required_skill_id",
+          "required_skill_level",
+          "tier",
+          "notes",
+          "item_guid",
+          "applied_at",
+          "rune_power_scaling",
+          "rune_max_per_character",
+          "Opportunity",
+          "guard_counter_window_ms",
+          "guard_counter_bonus_type",
+          "guard_counter_bonus_value",
+          "guard_counter_pvp_scale"
+        ],
+        "found": [],
+        "missing": [
+          "item_crimson_phial",
+          "SPELL_CRIMSON_PHIAL",
+          "guid",
+          "max_charges",
+          "current_charges",
+          "last_refill_time",
+          "rune_id",
+          "name",
+          "spell_id",
+          "weapon_type_mask",
+          "required_skill_id",
+          "required_skill_level",
+          "tier",
+          "notes",
+          "item_guid",
+          "applied_at",
+          "rune_power_scaling",
+          "rune_max_per_character",
+          "Opportunity",
+          "guard_counter_window_ms",
+          "guard_counter_bonus_type",
+          "guard_counter_bonus_value",
+          "guard_counter_pvp_scale"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: guard_counter.lua (no C++ or Lua implementation found)",
+        "Missing C++ file: MortalFlask.h",
+        "Missing C++ file: MortalFlask.cpp",
+        "Missing C++ file: MortalGuardCounter.h",
+        "Missing SQL table: item_crimson_phial",
+        "Missing SQL table: SPELL_CRIMSON_PHIAL",
+        "Missing SQL table: guid",
+        "Missing SQL table: max_charges",
+        "Missing SQL table: current_charges",
+        "Missing SQL table: last_refill_time",
+        "Missing SQL table: rune_id",
+        "Missing SQL table: name",
+        "Missing SQL table: spell_id",
+        "Missing SQL table: weapon_type_mask",
+        "Missing SQL table: required_skill_id",
+        "Missing SQL table: required_skill_level",
+        "Missing SQL table: tier",
+        "Missing SQL table: notes",
+        "Missing SQL table: item_guid",
+        "Missing SQL table: applied_at",
+        "Missing SQL table: rune_power_scaling",
+        "Missing SQL table: rune_max_per_character",
+        "Missing SQL table: Opportunity",
+        "Missing SQL table: guard_counter_window_ms",
+        "Missing SQL table: guard_counter_bonus_type",
+        "Missing SQL table: guard_counter_bonus_value",
+        "Missing SQL table: guard_counter_pvp_scale"
+      ]
+    },
+    "22-healing-and-restoration": {
+      "spec_file": "docs/specs/22-healing-and-restoration.md",
+      "spec_name": "22-healing-and-restoration",
+      "spec_num": "22",
+      "status": "partial",
+      "completion": 40,
+      "lua_files": {
+        "required": [
+          "spell_learning_system.lua",
+          "zone_healing_rules.lua",
+          "ui_restoration_panel.lua"
+        ],
+        "found": [
+          {
+            "name": "spell_learning_system.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalSpellLearning.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "zone_healing_rules.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalZonePvP.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_restoration_panel.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalFlask.cpp",
+          "MortalHealing.cpp",
+          "MortalGuardCounter.cpp",
+          "MortalSpellLearning.cpp",
+          "MortalFirstAid.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalSpellLearning.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalSpellLearning.cpp"
+          },
+          {
+            "name": "MortalFirstAid.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalFirstAid.cpp"
+          }
+        ],
+        "missing": [
+          "MortalFlask.cpp",
+          "MortalHealing.cpp",
+          "MortalGuardCounter.cpp"
+        ]
+      },
+      "sql_tables": {
+        "required": [
+          "Restoration",
+          "mortal_crimson_phial",
+          "required_background_id",
+          "required_reputation_id",
+          "tuning_params"
+        ],
+        "found": [],
+        "missing": [
+          "Restoration",
+          "mortal_crimson_phial",
+          "required_background_id",
+          "required_reputation_id",
+          "tuning_params"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing C++ file: MortalFlask.cpp",
+        "Missing C++ file: MortalHealing.cpp",
+        "Missing C++ file: MortalGuardCounter.cpp",
+        "Missing SQL table: Restoration",
+        "Missing SQL table: mortal_crimson_phial",
+        "Missing SQL table: required_background_id",
+        "Missing SQL table: required_reputation_id",
+        "Missing SQL table: tuning_params"
+      ]
+    },
+    "23-mercenary-healers": {
+      "spec_file": "docs/specs/23-mercenary-healers.md",
+      "spec_name": "23-mercenary-healers",
+      "spec_num": "23",
+      "status": "partial",
+      "completion": 14,
+      "lua_files": {
+        "required": [
+          "merc_ui.lua",
+          "merc_healer_system.lua"
+        ],
+        "found": [
+          {
+            "name": "merc_ui.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMercenaryBroker.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "merc_healer_system.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMercenaryBroker.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "merc_max_per_party",
+          "id",
+          "owner_guid",
+          "merc_template_id",
+          "merc_creature_guid",
+          "start_time",
+          "end_time",
+          "active",
+          "last_paid_time",
+          "daily_wage",
+          "notes",
+          "name",
+          "role",
+          "base_gear_tier",
+          "creature_entry",
+          "base_wage",
+          "max_bond_bonus",
+          "creature_template",
+          "merc_enabled",
+          "merc_cleric_enabled",
+          "merc_allowed_in_raids",
+          "merc_allowed_in_delves",
+          "merc_instance_only",
+          "merc_fee_multiplier",
+          "mortal_merc_templates"
+        ],
+        "found": [
+          {
+            "name": "creature_template",
+            "path": "sql/20_custom_npcs.sql"
+          },
+          {
+            "name": "mortal_merc_templates",
+            "path": "sql/65_mortal_core_registry_tables.sql"
+          }
+        ],
+        "missing": [
+          "merc_max_per_party",
+          "id",
+          "owner_guid",
+          "merc_template_id",
+          "merc_creature_guid",
+          "start_time",
+          "end_time",
+          "active",
+          "last_paid_time",
+          "daily_wage",
+          "notes",
+          "name",
+          "role",
+          "base_gear_tier",
+          "creature_entry",
+          "base_wage",
+          "max_bond_bonus",
+          "merc_enabled",
+          "merc_cleric_enabled",
+          "merc_allowed_in_raids",
+          "merc_allowed_in_delves",
+          "merc_instance_only",
+          "merc_fee_multiplier"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: merc_max_per_party",
+        "Missing SQL table: id",
+        "Missing SQL table: owner_guid",
+        "Missing SQL table: merc_template_id",
+        "Missing SQL table: merc_creature_guid",
+        "Missing SQL table: start_time",
+        "Missing SQL table: end_time",
+        "Missing SQL table: active",
+        "Missing SQL table: last_paid_time",
+        "Missing SQL table: daily_wage",
+        "Missing SQL table: notes",
+        "Missing SQL table: name",
+        "Missing SQL table: role",
+        "Missing SQL table: base_gear_tier",
+        "Missing SQL table: creature_entry",
+        "Missing SQL table: base_wage",
+        "Missing SQL table: max_bond_bonus",
+        "Missing SQL table: merc_enabled",
+        "Missing SQL table: merc_cleric_enabled",
+        "Missing SQL table: merc_allowed_in_raids",
+        "Missing SQL table: merc_allowed_in_delves",
+        "Missing SQL table: merc_instance_only",
+        "Missing SQL table: merc_fee_multiplier"
+      ]
+    },
+    "23a-merc-healer-archetypes": {
+      "spec_file": "docs/specs/23a-merc-healer-archetypes.md",
+      "spec_name": "23a-merc-healer-archetypes",
+      "spec_num": "23a",
+      "status": "partial",
+      "completion": 15,
+      "lua_files": {
+        "required": [
+          "merc_healer_system.lua"
+        ],
+        "found": [
+          {
+            "name": "merc_healer_system.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMercenaryBroker.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "merc_heal_mult",
+          "merc_damage_mult",
+          "merc_mana_mult",
+          "MERC_CLERIC_DISC",
+          "MERC_DRUID_RESTO",
+          "MERC_SHAMAN_RESTO"
+        ],
+        "found": [],
+        "missing": [
+          "merc_heal_mult",
+          "merc_damage_mult",
+          "merc_mana_mult",
+          "MERC_CLERIC_DISC",
+          "MERC_DRUID_RESTO",
+          "MERC_SHAMAN_RESTO"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: merc_heal_mult",
+        "Missing SQL table: merc_damage_mult",
+        "Missing SQL table: merc_mana_mult",
+        "Missing SQL table: MERC_CLERIC_DISC",
+        "Missing SQL table: MERC_DRUID_RESTO",
+        "Missing SQL table: MERC_SHAMAN_RESTO"
+      ]
+    },
+    "24-webportal-mortal-atlas": {
+      "spec_file": "docs/specs/24-webportal-mortal-atlas.md",
+      "spec_name": "24-webportal-mortal-atlas",
+      "spec_num": "24",
+      "status": "partial",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "index.h"
+        ],
+        "found": [],
+        "missing": [
+          "index.h"
+        ]
+      },
+      "sql_tables": {
+        "required": [
+          "AuthService"
+        ],
+        "found": [],
+        "missing": [
+          "AuthService"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/90_webportal_users.sql",
+        "sql/91_webportal_shop.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing C++ file: index.h",
+        "Missing SQL table: AuthService"
+      ]
+    },
+    "25-launcher-mortal-client": {
+      "spec_file": "docs/specs/25-launcher-mortal-client.md",
+      "spec_name": "25-launcher-mortal-client",
+      "spec_num": "25",
+      "status": "partial",
+      "completion": 27,
+      "lua_files": {
+        "required": [
+          "core.lua"
+        ],
+        "found": [
+          {
+            "name": "core.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalHardcoreResurrection.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "reqwest",
+          "status",
+          "diagnostics"
+        ],
+        "found": [],
+        "missing": [
+          "reqwest",
+          "status",
+          "diagnostics"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: reqwest",
+        "Missing SQL table: status",
+        "Missing SQL table: diagnostics"
+      ]
+    },
+    "26-gear-visual-mapping": {
+      "spec_file": "docs/specs/26-gear-visual-mapping.md",
+      "spec_name": "26-gear-visual-mapping",
+      "spec_num": "26",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "mortal_gear_visuals",
+          "source_type",
+          "mortal_tier"
+        ],
+        "found": [
+          {
+            "name": "mortal_gear_visuals",
+            "path": "sql/65_mortal_core_registry_tables.sql"
+          }
+        ],
+        "missing": [
+          "source_type",
+          "mortal_tier"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: source_type",
+        "Missing SQL table: mortal_tier",
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "27-gear-stats-and-etl": {
+      "spec_file": "docs/specs/27-gear-stats-and-etl.md",
+      "spec_name": "27-gear-stats-and-etl",
+      "spec_num": "27",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "Spi",
+          "slot"
+        ],
+        "found": [],
+        "missing": [
+          "Spi",
+          "slot"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: Spi",
+        "Missing SQL table: slot"
+      ]
+    },
+    "28-mounts-living-system-and-mapping": {
+      "spec_file": "docs/specs/28-mounts-living-system-and-mapping.md",
+      "spec_name": "28-mounts-living-system-and-mapping",
+      "spec_num": "28",
+      "status": "partial",
+      "completion": 43,
+      "lua_files": {
+        "required": [
+          "ui_tooltip_injector.lua"
+        ],
+        "found": [
+          {
+            "name": "ui_tooltip_injector.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalLivingMounts.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalLivingMounts.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalLivingMounts.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "mortal_mount_visuals",
+          "SKILL_RIDING_PACK",
+          "SKILL_RIDING_STANDARD",
+          "SKILL_RIDING_WAR",
+          "SKILL_RIDING_ELITE"
+        ],
+        "found": [
+          {
+            "name": "mortal_mount_visuals",
+            "path": "sql/65_mortal_core_registry_tables.sql"
+          }
+        ],
+        "missing": [
+          "SKILL_RIDING_PACK",
+          "SKILL_RIDING_STANDARD",
+          "SKILL_RIDING_WAR",
+          "SKILL_RIDING_ELITE"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/66_mount_visuals_seed.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: SKILL_RIDING_PACK",
+        "Missing SQL table: SKILL_RIDING_STANDARD",
+        "Missing SQL table: SKILL_RIDING_WAR",
+        "Missing SQL table: SKILL_RIDING_ELITE"
+      ]
+    },
+    "29-companion-bond-and-mercenary-system": {
+      "spec_file": "docs/specs/29-companion-bond-and-mercenary-system.md",
+      "spec_name": "29-companion-bond-and-mercenary-system",
+      "spec_num": "29",
+      "status": "partial",
+      "completion": 67,
+      "lua_files": {
+        "required": [
+          "merc_healer.lua"
+        ],
+        "found": [
+          {
+            "name": "merc_healer.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMercenaryBroker.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "merc_healer.cpp",
+          "comp.h"
+        ],
+        "found": [],
+        "missing": [
+          "merc_healer.cpp",
+          "comp.h"
+        ]
+      },
+      "sql_tables": {
+        "required": [
+          "mortal_companions",
+          "mortal_merc_templates",
+          "mortal_merc_contracts"
+        ],
+        "found": [
+          {
+            "name": "mortal_companions",
+            "path": "sql/65_mortal_core_registry_tables.sql"
+          },
+          {
+            "name": "mortal_merc_templates",
+            "path": "sql/65_mortal_core_registry_tables.sql"
+          },
+          {
+            "name": "mortal_merc_contracts",
+            "path": "sql/65_mortal_core_registry_tables.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/29_mercenary_broker.sql",
+        "sql/67_companion_feed_items.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing C++ file: merc_healer.cpp",
+        "Missing C++ file: comp.h"
+      ]
+    },
+    "30-db-migrations-mortal-core": {
+      "spec_file": "docs/specs/30-db-migrations-mortal-core.md",
+      "spec_name": "30-db-migrations-mortal-core",
+      "spec_num": "30",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/65_mortal_core_registry_tables.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "31-mortal-core-registry": {
+      "spec_file": "docs/specs/31-mortal-core-registry.md",
+      "spec_name": "31-mortal-core-registry",
+      "spec_num": "31",
+      "status": "partial",
+      "completion": 25,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/29_mercenary_broker.sql",
+        "sql/66_mount_visuals_seed.sql",
+        "sql/67_companion_feed_items.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "32-npc-and-encounter-rebalance": {
+      "spec_file": "docs/specs/32-npc-and-encounter-rebalance.md",
+      "spec_name": "32-npc-and-encounter-rebalance",
+      "spec_num": "32",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/94_npc_tier_mappings.sql",
+        "sql/82_npc_rebalance.sql",
+        "sql/99_world_boss_tier_mappings.sql",
+        "sql/100_other_raids_spell_scaling.sql",
+        "sql/95_icc_spell_scaling.sql"
+      ],
+      "cpp_mentions": [
+        "src/MortalCreature.cpp",
+        "src/MortalCreature.h",
+        "azerothcore/modules/mortal_overhaul/src/MortalCreature.cpp",
+        "azerothcore/modules/mortal_overhaul/src/MortalCreature.h"
+      ],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "33-instance-and-battleground-tier-mapping": {
+      "spec_file": "docs/specs/33-instance-and-battleground-tier-mapping.md",
+      "spec_name": "33-instance-and-battleground-tier-mapping",
+      "spec_num": "33",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "RAID_NAXX_N",
+          "RAID_NAXX_H",
+          "mortal_creature_tier_map",
+          "mortal_creature_tiers"
+        ],
+        "found": [
+          {
+            "name": "mortal_creature_tier_map",
+            "path": "sql/82_npc_rebalance.sql"
+          },
+          {
+            "name": "mortal_creature_tiers",
+            "path": "sql/82_npc_rebalance.sql"
+          }
+        ],
+        "missing": [
+          "RAID_NAXX_N",
+          "RAID_NAXX_H"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/94_npc_tier_mappings.sql",
+        "sql/84_instance_tier_mapping.sql",
+        "sql/104_complete_instance_tier_mapping.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: RAID_NAXX_N",
+        "Missing SQL table: RAID_NAXX_H",
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "34-mortal-arena-and-rating": {
+      "spec_file": "docs/specs/34-mortal-arena-and-rating.md",
+      "spec_name": "34-mortal-arena-and-rating",
+      "spec_num": "34",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF",
+          "mortal_arena_team_rating"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": [
+          "mortal_arena_team_rating"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: mortal_arena_team_rating",
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "35-mortal-pvp-vendors-and-rewards": {
+      "spec_file": "docs/specs/35-mortal-pvp-vendors-and-rewards.md",
+      "spec_name": "35-mortal-pvp-vendors-and-rewards",
+      "spec_num": "35",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/101_pvp_item_requirements_template.sql",
+        "sql/103_pvp_vendor_inventories.sql",
+        "sql/93_pvp_vendor_npcs.sql",
+        "sql/81_pvp_vendors.sql",
+        "sql/102_pvp_item_requirements_populated.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "36-mortal-achievements-and-titles-core": {
+      "spec_file": "docs/specs/36-mortal-achievements-and-titles-core.md",
+      "spec_name": "36-mortal-achievements-and-titles-core",
+      "spec_num": "36",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "37-economy-system-extensions": {
+      "spec_file": "docs/specs/37-economy-system-extensions.md",
+      "spec_name": "37-economy-system-extensions",
+      "spec_num": "37",
+      "status": "complete",
+      "completion": 100,
+      "lua_files": {
+        "required": [
+          "buy_order_system.lua",
+          "regional_bonus_manager.lua"
+        ],
+        "found": [
+          {
+            "name": "buy_order_system.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalBuyOrders.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "regional_bonus_manager.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRegionalBank.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalTaskBoard.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalTaskBoard.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTaskBoard.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/85_economy_extensions.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "38-social-and-onboarding-systems": {
+      "spec_file": "docs/specs/38-social-and-onboarding-systems.md",
+      "spec_name": "38-social-and-onboarding-systems",
+      "spec_num": "38",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "39-navigation-and-wayfinding": {
+      "spec_file": "docs/specs/39-navigation-and-wayfinding.md",
+      "spec_name": "39-navigation-and-wayfinding",
+      "spec_num": "39",
+      "status": "complete",
+      "completion": 100,
+      "lua_files": {
+        "required": [
+          "ui_map_pins.lua",
+          "ui_nameplate_driver.lua"
+        ],
+        "found": [
+          {
+            "name": "ui_map_pins.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "ui_nameplate_driver.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalUISurvival.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/86_navigation_pois.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "40-anti-bot-rmt-and-security": {
+      "spec_file": "docs/specs/40-anti-bot-rmt-and-security.md",
+      "spec_name": "40-anti-bot-rmt-and-security",
+      "spec_num": "40",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/83_security_system.sql",
+        "sql/112_security_enhancements.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "41-telemetry-and-balancing": {
+      "spec_file": "docs/specs/41-telemetry-and-balancing.md",
+      "spec_name": "41-telemetry-and-balancing",
+      "spec_num": "41",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF",
+          "mortal_activity_summary_daily",
+          "time_in_group"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          },
+          {
+            "name": "mortal_activity_summary_daily",
+            "path": "sql/83_security_system.sql"
+          }
+        ],
+        "missing": [
+          "time_in_group"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: time_in_group",
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "42-gm-tools-and-live-events": {
+      "spec_file": "docs/specs/42-gm-tools-and-live-events.md",
+      "spec_name": "42-gm-tools-and-live-events",
+      "spec_num": "42",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF",
+          "mortal_regional_bonuses"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          },
+          {
+            "name": "mortal_regional_bonuses",
+            "path": "sql/85_economy_extensions.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "43-long-term-progression-and-seasons": {
+      "spec_file": "docs/specs/43-long-term-progression-and-seasons.md",
+      "spec_name": "43-long-term-progression-and-seasons",
+      "spec_num": "43",
+      "status": "partial",
+      "completion": 25,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/120_long_term_progression.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "44-accessibility-and-ux-guidelines": {
+      "spec_file": "docs/specs/44-accessibility-and-ux-guidelines.md",
+      "spec_name": "44-accessibility-and-ux-guidelines",
+      "spec_num": "44",
+      "status": "partial",
+      "completion": 25,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/119_accessibility_features.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "45-eldens-eve-layer": {
+      "spec_file": "docs/specs/45-eldens-eve-layer.md",
+      "spec_name": "45-eldens-eve-layer",
+      "spec_num": "45",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/126_planar_events.sql",
+        "sql/115_eldens_eve_enhancements.sql",
+        "sql/87_travelers_notes.sql",
+        "sql/88_insurance_vouchers.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "46-public-grouping-and-contribution": {
+      "spec_file": "docs/specs/46-public-grouping-and-contribution.md",
+      "spec_name": "46-public-grouping-and-contribution",
+      "spec_num": "46",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "mortal_event_contrib",
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": [
+          "mortal_event_contrib"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: mortal_event_contrib",
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "47-mentoring-and-build-loadouts": {
+      "spec_file": "docs/specs/47-mentoring-and-build-loadouts.md",
+      "spec_name": "47-mentoring-and-build-loadouts",
+      "spec_num": "47",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/117_mentoring_enhancements.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "48-zone-invasions-and-cross-faction-pve": {
+      "spec_file": "docs/specs/48-zone-invasions-and-cross-faction-pve.md",
+      "spec_name": "48-zone-invasions-and-cross-faction-pve",
+      "spec_num": "48",
+      "status": "partial",
+      "completion": 16,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "NEUTRAL",
+          "HOT",
+          "INVADED",
+          "OCCUPIED",
+          "PURGED",
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": [
+          "NEUTRAL",
+          "HOT",
+          "INVADED",
+          "OCCUPIED",
+          "PURGED"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: NEUTRAL",
+        "Missing SQL table: HOT",
+        "Missing SQL table: INVADED",
+        "Missing SQL table: OCCUPIED",
+        "Missing SQL table: PURGED",
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "49-webportal-wiki-spec": {
+      "spec_file": "docs/specs/49-webportal-wiki-spec.md",
+      "spec_name": "49-webportal-wiki-spec",
+      "spec_num": "49",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF",
+          "is_locked",
+          "q",
+          "wiki_page_versions"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          },
+          {
+            "name": "wiki_page_versions",
+            "path": "sql/89_webportal_wiki.sql"
+          }
+        ],
+        "missing": [
+          "is_locked",
+          "q"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/131_wiki_articles_mortal_schema.sql",
+        "sql/130_wiki_articles_populated.sql",
+        "sql/89_webportal_wiki.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: is_locked",
+        "Missing SQL table: q",
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "50-lifeskills-fishing-and-first-aid": {
+      "spec_file": "docs/specs/50-lifeskills-fishing-and-first-aid.md",
+      "spec_name": "50-lifeskills-fishing-and-first-aid",
+      "spec_num": "50",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/123_first_aid_items.sql",
+        "sql/106_fishing_system.sql",
+        "sql/107_first_aid_system.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "51-factions-and-standing-system": {
+      "spec_file": "docs/specs/51-factions-and-standing-system.md",
+      "spec_name": "51-factions-and-standing-system",
+      "spec_num": "51",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/105_factions_system.sql",
+        "sql/121_faction_npcs.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "52-season-of-the-frontier": {
+      "spec_file": "docs/specs/52-season-of-the-frontier.md",
+      "spec_name": "52-season-of-the-frontier",
+      "spec_num": "52",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/108_season_challenge_system.sql",
+        "sql/125_season_challenges.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "53-rune-augments-and-gear-build-system": {
+      "spec_file": "docs/specs/53-rune-augments-and-gear-build-system.md",
+      "spec_name": "53-rune-augments-and-gear-build-system",
+      "spec_num": "53",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/124_rune_augment_items.sql",
+        "sql/109_rune_augments_system.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "54-endless-contracts-defense-and-survival": {
+      "spec_file": "docs/specs/54-endless-contracts-defense-and-survival.md",
+      "spec_name": "54-endless-contracts-defense-and-survival",
+      "spec_num": "54",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/111_endless_contracts_system.sql",
+        "sql/127_endless_contract_definitions.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "55-build-presets-and-loadouts": {
+      "spec_file": "docs/specs/55-build-presets-and-loadouts.md",
+      "spec_name": "55-build-presets-and-loadouts",
+      "spec_num": "55",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [
+        "sql/110_build_presets_system.sql"
+      ],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "56-negative-titles-and-notoriety-labels": {
+      "spec_file": "docs/specs/56-negative-titles-and-notoriety-labels.md",
+      "spec_name": "56-negative-titles-and-notoriety-labels",
+      "spec_num": "56",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "57-appearance-codex-and-transmog": {
+      "spec_file": "docs/specs/57-appearance-codex-and-transmog.md",
+      "spec_name": "57-appearance-codex-and-transmog",
+      "spec_num": "57",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "58-world-contracts-and-map-pins": {
+      "spec_file": "docs/specs/58-world-contracts-and-map-pins.md",
+      "spec_name": "58-world-contracts-and-map-pins",
+      "spec_num": "58",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "59-shrine-and-faction-trials": {
+      "spec_file": "docs/specs/59-shrine-and-faction-trials.md",
+      "spec_name": "59-shrine-and-faction-trials",
+      "spec_num": "59",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "60-faction-sanctums": {
+      "spec_file": "docs/specs/60-faction-sanctums.md",
+      "spec_name": "60-faction-sanctums",
+      "spec_num": "60",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF",
+          "mortal_faction_sanctums"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": [
+          "mortal_faction_sanctums"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: mortal_faction_sanctums",
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "61-weapon-legacy-and-history": {
+      "spec_file": "docs/specs/61-weapon-legacy-and-history.md",
+      "spec_name": "61-weapon-legacy-and-history",
+      "spec_num": "61",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "62-core-lore-and-campaign-skeleton": {
+      "spec_file": "docs/specs/62-core-lore-and-campaign-skeleton.md",
+      "spec_name": "62-core-lore-and-campaign-skeleton",
+      "spec_num": "62",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "63-quest-conversion-strategy": {
+      "spec_file": "docs/specs/63-quest-conversion-strategy.md",
+      "spec_name": "63-quest-conversion-strategy",
+      "spec_num": "63",
+      "status": "partial",
+      "completion": 30,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "IF"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "64-spell-and-ability-library": {
+      "spec_file": "docs/specs/64-spell-and-ability-library.md",
+      "spec_name": "64-spell-and-ability-library",
+      "spec_num": "64",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "Mortal_Heal_Short",
+          "Mortal_Heal_Long"
+        ],
+        "found": [],
+        "missing": [
+          "Mortal_Heal_Short",
+          "Mortal_Heal_Long"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: Mortal_Heal_Short",
+        "Missing SQL table: Mortal_Heal_Long"
+      ]
+    },
+    "65-endgame-rhythm-and-lockouts": {
+      "spec_file": "docs/specs/65-endgame-rhythm-and-lockouts.md",
+      "spec_name": "65-endgame-rhythm-and-lockouts",
+      "spec_num": "65",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "66-legacy-services-and-qol": {
+      "spec_file": "docs/specs/66-legacy-services-and-qol.md",
+      "spec_name": "66-legacy-services-and-qol",
+      "spec_num": "66",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "67-conversion-automation-plan": {
+      "spec_file": "docs/specs/67-conversion-automation-plan.md",
+      "spec_name": "67-conversion-automation-plan",
+      "spec_num": "67",
+      "status": "partial",
+      "completion": 25,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "mortal_pvp_spell_rules.h"
+        ],
+        "found": [],
+        "missing": [
+          "mortal_pvp_spell_rules.h"
+        ]
+      },
+      "sql_tables": {
+        "required": [
+          "IF",
+          "quest_template",
+          "mortal_npc_tags"
+        ],
+        "found": [
+          {
+            "name": "IF",
+            "path": "sql/106_fishing_system.sql"
+          }
+        ],
+        "missing": [
+          "quest_template",
+          "mortal_npc_tags"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing C++ file: mortal_pvp_spell_rules.h",
+        "Missing SQL table: quest_template",
+        "Missing SQL table: mortal_npc_tags",
+        "Has SQL tables but no C++/Lua code implementation"
+      ]
+    },
+    "68-prologue-and-act1-quest-pack": {
+      "spec_file": "docs/specs/68-prologue-and-act1-quest-pack.md",
+      "spec_name": "68-prologue-and-act1-quest-pack",
+      "spec_num": "68",
+      "status": "partial",
+      "completion": 88,
+      "lua_files": {
+        "required": [
+          "combat_skills.lua",
+          "living_mounts.lua",
+          "road_speed_system.lua"
+        ],
+        "found": [
+          {
+            "name": "combat_skills.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCombatSkills.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "living_mounts.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalLivingMounts.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "road_speed_system.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRoadSpeed.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [
+          "MortalCraftingWorkstation.cpp",
+          "MortalTaskBoard.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalCraftingWorkstation.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalCraftingWorkstation.cpp"
+          },
+          {
+            "name": "MortalTaskBoard.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTaskBoard.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "QuestID"
+        ],
+        "found": [],
+        "missing": [
+          "QuestID"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: QuestID"
+      ]
+    },
+    "69-faction-intro-chains-ledger-and-shrine": {
+      "spec_file": "docs/specs/69-faction-intro-chains-ledger-and-shrine.md",
+      "spec_name": "69-faction-intro-chains-ledger-and-shrine",
+      "spec_num": "69",
+      "status": "complete",
+      "completion": 100,
+      "lua_files": {
+        "required": [
+          "insurance_service.lua"
+        ],
+        "found": [
+          {
+            "name": "insurance_service.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalInsurance.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "70-act2-price-of-life-quest-pack": {
+      "spec_file": "docs/specs/70-act2-price-of-life-quest-pack.md",
+      "spec_name": "70-act2-price-of-life-quest-pack",
+      "spec_num": "70",
+      "status": "partial",
+      "completion": 69,
+      "lua_files": {
+        "required": [
+          "zombie_horde_event.lua",
+          "dynamic_mob_ai.lua"
+        ],
+        "found": [
+          {
+            "name": "dynamic_mob_ai.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalDynamicMapPins.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "zombie_horde_event.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "MortalTaskBoard.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalTaskBoard.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTaskBoard.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: zombie_horde_event.lua (no C++ or Lua implementation found)"
+      ]
+    },
+    "71-act3-the-four-bargains-quest-pack": {
+      "spec_file": "docs/specs/71-act3-the-four-bargains-quest-pack.md",
+      "spec_name": "71-act3-the-four-bargains-quest-pack",
+      "spec_num": "71",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [
+          "zombie_horde_event.lua"
+        ],
+        "found": [],
+        "missing": [
+          "zombie_horde_event.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: zombie_horde_event.lua (no C++ or Lua implementation found)"
+      ]
+    },
+    "72-act4-strongholds-and-invasions-campaign": {
+      "spec_file": "docs/specs/72-act4-strongholds-and-invasions-campaign.md",
+      "spec_name": "72-act4-strongholds-and-invasions-campaign",
+      "spec_num": "72",
+      "status": "complete",
+      "completion": 100,
+      "lua_files": {
+        "required": [
+          "stronghold_capture.lua",
+          "stronghold_siege_clock.lua",
+          "zone_invasion_controller.lua",
+          "warfront_portal.lua"
+        ],
+        "found": [
+          {
+            "name": "stronghold_capture.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalStrongholdSystem.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "stronghold_siege_clock.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalStrongholdSystem.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "zone_invasion_controller.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalZonePvP.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "warfront_portal.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalWarfrontState.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "73-act5-endgame-campaign-the-lost-crown": {
+      "spec_file": "docs/specs/73-act5-endgame-campaign-the-lost-crown.md",
+      "spec_name": "73-act5-endgame-campaign-the-lost-crown",
+      "spec_num": "73",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "74-cursed-artifacts-and-extraction-system": {
+      "spec_file": "docs/specs/74-cursed-artifacts-and-extraction-system.md",
+      "spec_name": "74-cursed-artifacts-and-extraction-system",
+      "spec_num": "74",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "cursed_artifact_def",
+          "cursed_artifact_instance",
+          "cursed_world_state"
+        ],
+        "found": [],
+        "missing": [
+          "cursed_artifact_def",
+          "cursed_artifact_instance",
+          "cursed_world_state"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: cursed_artifact_def",
+        "Missing SQL table: cursed_artifact_instance",
+        "Missing SQL table: cursed_world_state"
+      ]
+    },
+    "75-mortal-gear-and-runes-spec": {
+      "spec_file": "docs/specs/75-mortal-gear-and-runes-spec.md",
+      "spec_name": "75-mortal-gear-and-runes-spec",
+      "spec_num": "75",
+      "status": "partial",
+      "completion": 36,
+      "lua_files": {
+        "required": [
+          "armor_weight_system.lua",
+          "encumbrance_logic.lua"
+        ],
+        "found": [
+          {
+            "name": "armor_weight_system.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalArmorWeight.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "encumbrance_logic.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalEncumbrance.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "mortal_item_meta",
+          "mortal_rune_slots",
+          "mortal_rune_def",
+          "mortal_item_runes"
+        ],
+        "found": [],
+        "missing": [
+          "mortal_item_meta",
+          "mortal_rune_slots",
+          "mortal_rune_def",
+          "mortal_item_runes"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing SQL table: mortal_item_meta",
+        "Missing SQL table: mortal_rune_slots",
+        "Missing SQL table: mortal_rune_def",
+        "Missing SQL table: mortal_item_runes"
+      ]
+    },
+    "76-dynamic-tasks-and-contracts-2-0-spec": {
+      "spec_file": "docs/specs/76-dynamic-tasks-and-contracts-2-0-spec.md",
+      "spec_name": "76-dynamic-tasks-and-contracts-2-0-spec",
+      "spec_num": "76",
+      "status": "partial",
+      "completion": 26,
+      "lua_files": {
+        "required": [
+          "contract_board_system.lua",
+          "region_demand_controller.lua"
+        ],
+        "found": [
+          {
+            "name": "region_demand_controller.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalRegionalBank.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "contract_board_system.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [
+          "MortalTaskBoard.cpp"
+        ],
+        "found": [
+          {
+            "name": "MortalTaskBoard.cpp",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalTaskBoard.cpp"
+          }
+        ],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "mortal_task_template",
+          "mortal_contract_template",
+          "mortal_task_instance",
+          "mortal_contract_instance",
+          "mortal_region_demand_state"
+        ],
+        "found": [],
+        "missing": [
+          "mortal_task_template",
+          "mortal_contract_template",
+          "mortal_task_instance",
+          "mortal_contract_instance",
+          "mortal_region_demand_state"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: contract_board_system.lua (no C++ or Lua implementation found)",
+        "Missing SQL table: mortal_task_template",
+        "Missing SQL table: mortal_contract_template",
+        "Missing SQL table: mortal_task_instance",
+        "Missing SQL table: mortal_contract_instance",
+        "Missing SQL table: mortal_region_demand_state"
+      ]
+    },
+    "77-mortal-itemization-t1-t2-starter-sets": {
+      "spec_file": "docs/specs/77-mortal-itemization-t1-t2-starter-sets.md",
+      "spec_name": "77-mortal-itemization-t1-t2-starter-sets",
+      "spec_num": "77",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "78-mortal-itemization-healer-ranger-mage": {
+      "spec_file": "docs/specs/78-mortal-itemization-healer-ranger-mage.md",
+      "spec_name": "78-mortal-itemization-healer-ranger-mage",
+      "spec_num": "78",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "79-drop-mapping-t1-t2-gear-and-runes": {
+      "spec_file": "docs/specs/79-drop-mapping-t1-t2-gear-and-runes.md",
+      "spec_name": "79-drop-mapping-t1-t2-gear-and-runes",
+      "spec_num": "79",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "80-content-lane-frontier-bruiser-quest-and-loot-bundle": {
+      "spec_file": "docs/specs/80-content-lane-frontier-bruiser-quest-and-loot-bundle.md",
+      "spec_name": "80-content-lane-frontier-bruiser-quest-and-loot-bundle",
+      "spec_num": "80",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [
+          "hold_the_crossing.lua",
+          "militia_muster.lua",
+          "defense_event.lua"
+        ],
+        "found": [],
+        "missing": [
+          "hold_the_crossing.lua",
+          "militia_muster.lua",
+          "defense_event.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: hold_the_crossing.lua (no C++ or Lua implementation found)",
+        "Missing: militia_muster.lua (no C++ or Lua implementation found)",
+        "Missing: defense_event.lua (no C++ or Lua implementation found)"
+      ]
+    },
+    "81-archon-and-staff-chat-tags-eluna-spec": {
+      "spec_file": "docs/specs/81-archon-and-staff-chat-tags-eluna-spec.md",
+      "spec_name": "81-archon-and-staff-chat-tags-eluna-spec",
+      "spec_num": "81",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [
+          "mortal_staff_tags.lua"
+        ],
+        "found": [],
+        "missing": [
+          "mortal_staff_tags.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [
+          "gmlevel",
+          "chr_titles"
+        ],
+        "found": [],
+        "missing": [
+          "gmlevel",
+          "chr_titles"
+        ]
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: mortal_staff_tags.lua (no C++ or Lua implementation found)",
+        "Missing SQL table: gmlevel",
+        "Missing SQL table: chr_titles"
+      ]
+    },
+    "82-mortal-autobroadcast-pack.sql": {
+      "spec_file": "docs/specs/82-mortal-autobroadcast-pack.sql.md",
+      "spec_name": "82-mortal-autobroadcast-pack.sql",
+      "spec_num": "82",
+      "status": "missing",
+      "completion": 0,
+      "lua_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": []
+    },
+    "83-mortal-event-broadcasts.sql-and-eluna": {
+      "spec_file": "docs/specs/83-mortal-event-broadcasts.sql-and-eluna.md",
+      "spec_name": "83-mortal-event-broadcasts.sql-and-eluna",
+      "spec_num": "83",
+      "status": "partial",
+      "completion": 55,
+      "lua_files": {
+        "required": [
+          "midnight_horde_announcer.lua",
+          "shrine_defense_announcer.lua",
+          "siege_and_warfront_announcer.lua",
+          "rift_and_hellgate_announcer.lua"
+        ],
+        "found": [
+          {
+            "name": "midnight_horde_announcer.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalMidnightHorde.cpp",
+            "note": "C++ implementation (preferred)"
+          },
+          {
+            "name": "siege_and_warfront_announcer.lua",
+            "path": "azerothcore/modules/mortal_overhaul/src/MortalSiegeWindow.cpp",
+            "note": "C++ implementation (preferred)"
+          }
+        ],
+        "missing": [
+          "shrine_defense_announcer.lua",
+          "rift_and_hellgate_announcer.lua"
+        ]
+      },
+      "cpp_files": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "sql_tables": {
+        "required": [],
+        "found": [],
+        "missing": []
+      },
+      "has_event_hooks": false,
+      "sql_mentions": [],
+      "cpp_mentions": [],
+      "issues": [
+        "Missing: shrine_defense_announcer.lua (no C++ or Lua implementation found)",
+        "Missing: rift_and_hellgate_announcer.lua (no C++ or Lua implementation found)"
+      ]
+    }
+  }
+}
