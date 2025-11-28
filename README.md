@@ -2,6 +2,15 @@
 
 A comprehensive custom World of Warcraft 3.3.5a server built on AzerothCore with extensive modifications for survival gameplay.
 
+## 🌿 Branches
+
+This repository contains two separate server realms:
+
+- **`mortal-overhaul`** (default): Mortal Warcraft custom server with survival mechanics
+- **`realm2-era-progression`**: Classic Era progression server
+
+See [BRANCH_STRATEGY.md](BRANCH_STRATEGY.md) for branch usage and switching between realms.
+
 ## 🎮 Overview
 
 Mortal Warcraft transforms the classic WoW experience into a hardcore survival MMO with:
