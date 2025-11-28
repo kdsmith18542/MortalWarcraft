@@ -1,0 +1,21 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+    <!-- Embedded HandyNotes (must load before map pins) -->
+    <Script file="Embedded\HandyNotes\HandyNotes.lua"/>
+    
+    <!-- Modules -->
+    <Script file="modules/config_enforcer.lua"/>
+    <Script file="modules/ui_map_pins.lua"/>
+    <Script file="modules/ui_faction_standing.lua"/>
+    <Script file="modules/ui_nameplate_driver.lua"/>
+    <Script file="modules/ui_tooltip_injector.lua"/>
+    <Script file="modules/ui_stats_overlay.lua"/>
+    <Script file="modules/ui_hunger_display.lua"/>
+    <Script file="modules/ui_encumbrance_display.lua"/>
+    <Script file="modules/ui_crime_status.lua"/>
+    <Script file="modules/ui_risk_zone_banner.lua"/>
+    <Script file="modules/ui_zone_signage.lua"/>
+    <Script file="modules/ui_environmental_hazards.lua"/>
+    <Script file="modules/ui_advanced_signage.lua"/>
+    <Script file="modules/ui_minimap_overlays.lua"/>
+</Ui>
+

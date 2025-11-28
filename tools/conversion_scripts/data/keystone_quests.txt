@@ -1,0 +1,10 @@
+# Keystone Quest Chains
+# One quest ID per line
+# These quests will be force-tagged as STORY_REWRITE
+# Add quest IDs that are important campaign/act quests here
+
+# Example (uncomment and add actual quest IDs):
+# 12345
+# 12346
+# 12347
+

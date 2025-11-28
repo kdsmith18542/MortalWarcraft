@@ -1,0 +1,40 @@
+# Mortal Warcraft Custom Spells - Ready for WDBX Editor Import
+# Format: CSV compatible with Spell.dbc (3.3.5a - Build 12340)
+# 
+# Field Order (partial, key fields only):
+# ID,Name_Lang_enUS,Description_Lang_enUS,DurationIndex,RangeIndex,SpellIconID,ActiveIconID,SchoolMask,Category,CastingTimeIndex,RecoveryTime,StartRecoveryCategory,StartRecoveryTime,Effect_1,EffectDieSides_1,EffectBaseDice_1,EffectDicePerLevel_1,EffectRealPointsPerLevel_1,EffectBasePoints_1,EffectMechanic_1,EffectImplicitTargetA_1,EffectImplicitTargetB_1,EffectRadiusIndex_1,EffectApplyAuraName_1,EffectAmplitude_1,EffectMultipleValue_1,EffectMiscValue_1,EffectMiscValueB_1,EffectTriggerSpell_1,SpellVisual_1,SpellVisual_2,ManaCost,Attributes,AttributesEx,AttributesEx2,AttributesEx3,AttributesEx4,AttributesEx5,AttributesEx6,AttributesEx7
+
+# BRACE MECHANIC (ID: 90010)
+90010,Brace,Brace yourself reducing damage taken by 50 percent for 0.75 seconds.,9,1,18,18,1,256,1,5000,0,0,6,0,0,0,0,-50,0,1,0,0,79,0,0,0,0,0,836,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+
+# HUNGER DEBUFFS (IDs: 90020-90025)
+90020,Hunger: Peckish,You are slightly hungry. Stats reduced by 2 percent.,21,1,1,1,1,0,1,0,0,0,6,0,0,0,0,-2,0,1,0,0,108,0,0,0,0,0,12380,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90021,Hunger: Hungry,You are hungry. Stats reduced by 5 percent. Regeneration reduced by 5 percent.,21,1,2,2,1,0,1,0,0,0,6,0,0,0,0,-5,0,1,0,0,108,0,0,0,0,0,12380,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90022,Hunger: Famished,You are famished. Stats reduced by 10 percent. Regeneration reduced by 10 percent.,21,1,3,3,1,0,1,0,0,0,6,0,0,0,0,-10,0,1,0,0,108,0,0,0,0,0,12380,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90023,Hunger: Starving,You are starving. Stats reduced by 20 percent. Regeneration reduced by 20 percent.,21,1,4,4,1,0,1,0,0,0,6,0,0,0,0,-20,0,1,0,0,108,0,0,0,0,0,12380,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90024,Hunger: Emaciated,You are emaciated. Stats reduced by 35 percent. Regeneration reduced by 35 percent.,21,1,5,5,1,0,1,0,0,0,6,0,0,0,0,-35,0,1,0,0,108,0,0,0,0,0,12380,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90025,Hunger: Death,You are dying of starvation. Health reduced to 1.,21,1,6,6,1,0,1,0,0,0,6,0,0,0,0,-99,0,1,0,0,108,0,0,0,0,0,12380,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+
+# ENCUMBRANCE PENALTIES (IDs: 90030-90035)
+90030,Encumbered: Light,Carrying capacity below 50 percent. Movement speed reduced by 5 percent.,21,1,10,10,1,0,1,0,0,0,6,0,0,0,0,-5,0,1,0,0,109,0,0,0,0,0,6947,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90031,Encumbered: Medium,Carrying capacity between 50-75 percent. Movement speed reduced by 15 percent.,21,1,11,11,1,0,1,0,0,0,6,0,0,0,0,-15,0,1,0,0,109,0,0,0,0,0,6947,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90032,Encumbered: Heavy,Carrying capacity between 75-100 percent. Movement speed reduced by 30 percent. Jump height reduced by 50 percent.,21,1,12,12,1,0,1,0,0,0,6,0,0,0,0,-30,0,1,0,0,109,0,0,0,0,0,6947,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90033,Encumbered: Overloaded,Carrying capacity between 100-125 percent. Movement speed reduced by 50 percent. Cannot jump.,21,1,13,13,1,0,1,0,0,0,6,0,0,0,0,-50,0,1,0,0,109,0,0,0,0,0,6947,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90034,Encumbered: Immobile,Carrying capacity over 125 percent. Movement speed reduced by 90 percent. Cannot jump.,21,1,14,14,1,0,1,0,0,0,6,0,0,0,0,-90,0,1,0,0,109,0,0,0,0,0,6947,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+
+# CRIME FLAG VISUAL (ID: 90040)
+90040,Criminal,Marked as a criminal. Guards will attack on sight.,8,1,20,20,32,0,1,0,0,0,6,0,0,0,0,0,0,1,0,0,4,0,0,0,0,0,22027,0,0,0x00000000,0x00000000,0x00000000,0x00000001,0x00000000,0x00000000,0x00000000,0x00000000
+
+# TRACKING ABILITIES (Already in vanilla Spell.dbc - these are REFERENCE entries, not new additions)
+# 5225,Track Humanoids,Track Humanoids on minimap.,21,1,132,132,1,0,1,0,0,0,6,0,0,0,0,0,0,1,0,0,4,0,0,2,0,0,0,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+# 1494,Track Beasts,Track Beasts on minimap.,21,1,133,133,1,0,1,0,0,0,6,0,0,0,0,0,0,1,0,0,4,0,0,1,0,0,0,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+# (... other tracking spells already exist in vanilla)
+
+# RIFT PARTICIPANT AURA (ID: 900100) - Elden's Eve Layer
+900100,Rift Participant,Participating in a planar rift event. Hidden marker aura.,21,1,0,0,1,0,1,0,0,0,6,0,0,0,0,0,0,1,0,0,4,0,0,0,0,0,0,0,0,0x00000100,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+
+# TRACKING VARIANTS FOR MORTAL SYSTEM
+90050,Track Players,Track nearby players on minimap.,21,1,132,132,1,0,1,0,0,0,6,0,0,0,0,0,0,1,0,0,4,0,0,8,0,0,0,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90051,Detect Stealth,Greatly increases your stealth detection.,21,1,136,136,1,0,1,0,0,0,6,0,0,0,0,50,0,1,0,0,151,0,0,0,0,0,0,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+90052,Track Resources,Track resource nodes on minimap.,21,1,135,135,1,0,1,0,0,0,6,0,0,0,0,0,0,1,0,0,4,0,0,7,0,0,0,0,0,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000
+

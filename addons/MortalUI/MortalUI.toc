@@ -1,0 +1,35 @@
+## Interface: 30300
+## Title: MortalUI
+## Notes: Meta-addon for Mortal Warcraft Overhaul
+## Author: Mortal Warcraft Team
+## Version: 1.0.0
+
+MortalUI.lua
+MortalUI.xml
+
+# Embedded Libraries (load order matters)
+Libs\LibStub\LibStub.lua
+Embedded\HandyNotes\HandyNotes.lua
+
+modules/config_enforcer.lua
+modules/ui_map_pins.lua
+modules/ui_nameplate_driver.lua
+modules/ui_tooltip_injector.lua
+modules/ui_stats_overlay.lua
+modules/ui_hunger_display.lua
+modules/ui_encumbrance_display.lua
+modules/ui_crime_status.lua
+modules/ui_risk_zone_banner.lua
+modules/ui_zone_signage.lua
+modules/ui_environmental_hazards.lua
+modules/ui_advanced_signage.lua
+modules/ui_minimap_overlays.lua
+modules/ui_faction_panel.lua
+modules/ui_faction_standing.lua
+modules/ui_chat_world_toggle.lua
+modules/ui_season_challenges.lua
+modules/ui_rune_augments.lua
+modules/ui_build_presets.lua
+modules/ui_fishing_firstaid.lua
+
+embeds.xml

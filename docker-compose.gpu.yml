@@ -1,0 +1,74 @@
+version: '3.8'
+
+# Optimized docker-compose for GPU server (28 vCPU, 240GB RAM)
+# Use: docker-compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
+
+services:
+  mysql:
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+        reservations:
+          cpus: '2'
+          memory: 4G
+    command: >
+      --default-authentication-plugin=mysql_native_password
+      --max_allowed_packet=128M
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --innodb-buffer-pool-size=4G
+      --innodb-log-file-size=512M
+      --max-connections=500
+      --thread-cache-size=50
+      --table-open-cache=4000
+
+  authserver:
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+
+  worldserver:
+    deploy:
+      resources:
+        limits:
+          cpus: '12'
+          memory: 32G
+        reservations:
+          cpus: '6'
+          memory: 16G
+    environment:
+      # Optimize for 28 cores
+      - AC_BUILD_PARALLEL=28
+      - CMAKE_BUILD_PARALLEL_LEVEL=28
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  webportal-backend:
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+
+  webportal-frontend:
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+

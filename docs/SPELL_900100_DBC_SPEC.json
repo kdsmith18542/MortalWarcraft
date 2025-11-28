@@ -1,0 +1,76 @@
+{
+  "spell_id": 900100,
+  "name": "Rift Participant",
+  "description": "Marks you as a participant in a planar rift event.",
+  "tooltip": "You are participating in a planar rift event.",
+  "category": 0,
+  "dispel_type": 0,
+  "mechanic": 0,
+  "attributes": {
+    "SPELL_ATTR0_NOT_SHAPESHIFT": true,
+    "SPELL_ATTR0_PASSIVE": true,
+    "SPELL_ATTR0_DO_NOT_DISPLAY": true
+  },
+  "attributes_ex": {
+    "SPELL_ATTR1_NO_THREAT": true
+  },
+  "cast_time": 0,
+  "duration_index": 21,
+  "duration": -1,
+  "max_stack": 1,
+  "range": {
+    "min": 0,
+    "max": 0
+  },
+  "effects": [
+    {
+      "effect_index": 0,
+      "effect": 6,
+      "effect_aura": 4,
+      "effect_base_points": 1,
+      "effect_die_sides": 0,
+      "effect_real_points_per_level": 0,
+      "effect_mechanic": 0,
+      "implicit_target_a": 1,
+      "implicit_target_b": 0,
+      "effect_radius_index": 0,
+      "effect_apply_aura_name": 4,
+      "effect_amplitude": 0,
+      "effect_multiple_value": 0,
+      "effect_chain_target": 0,
+      "effect_item_type": 0,
+      "effect_misc_value": 0,
+      "effect_trigger_spell": 0
+    }
+  ],
+  "power": {
+    "power_type": -1,
+    "mana_cost": 0,
+    "mana_cost_per_level": 0,
+    "mana_per_second": 0,
+    "mana_per_second_per_level": 0,
+    "mana_cost_percentage": 0
+  },
+  "interrupts": {
+    "interrupt_flags": 0,
+    "aura_interrupt_flags": 0,
+    "channel_interrupt_flags": 0
+  },
+  "visuals": {
+    "spell_icon_id": 1,
+    "active_icon_id": 0,
+    "spell_visual_0": 0,
+    "spell_visual_1": 0
+  },
+  "equipment": {
+    "equipped_item_class": -1,
+    "equipped_item_subclass_mask": 0,
+    "equipped_item_inventory_type_mask": 0
+  },
+  "notes": {
+    "implementation": "This spell is applied automatically when a player joins a rift event and removed when they leave.",
+    "purpose": "Marker aura to identify rift participants for reward distribution and content access.",
+    "testing": "Verify aura is hidden from UI, persists in rift phase, and is removed on exit."
+  }
+}
+

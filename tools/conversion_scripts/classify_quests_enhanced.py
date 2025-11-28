@@ -1,0 +1,169 @@
+#!/usr/bin/env python3
+"""
+Mortal Warcraft Enhanced Quest Classification Script
+
+Enhanced version that provides more detailed classification and generates
+both conversion map and contract templates in one pass.
+
+Usage:
+    python3 classify_quests_enhanced.py [--input data/quests_raw.csv] [--output-dir output/]
+"""
+
+import csv
+import argparse
+import re
+from pathlib import Path
+from collections import defaultdict
+
+# Zone risk mappings (would be loaded from database)
+ZONE_RISK_MAP = {
+    # Example mappings - would be loaded from mortal_zone_risk_config
+    1: 'GREEN',   # Elwynn Forest
+    12: 'GREEN',  # Westfall
+    40: 'YELLOW', # Westfall (some areas)
+    # etc.
+}
+
+# Faction associations by zone/quest
+FACTION_ZONE_MAP = {
+    # Example - would be configured based on zone themes
+    'IRON_LEDGER': [1, 12, 1519],  # Trade-focused zones
+    'ORDER_SHRINE': [40, 85],      # Defense/undead zones
+    'BLACK_SUN_CARTEL': [3, 10],   # Criminal/seedy zones
+    'RANGERS_PACT': [28, 139],     # Wilderness/exploration zones
+}
+
+def classify_quest(quest):
+    """Enhanced quest classification with detailed analysis."""
+    quest_id = quest.get('entry', 0) or quest.get('Id', 0)
+    quest_name = quest.get('Title', '').lower()
+    quest_type = quest.get('Type', 0)
+    quest_level = quest.get('QuestLevel', 1)
+    zone_id = quest.get('ZoneOrSort', 0)
+    
+    classification = {
+        'quest_id': quest_id,
+        'conversion_type': 'FLAVOR',
+        'faction_tag': None,
+        'contract_template_id': None,
+        'notes': ''
+    }
+    
+    # Category A: Keystone Narrative Chains (STORY_REWRITE)
+    # - Long quest chains (5+ quests)
+    # - Zone-spanning arcs
+    # - Dungeon/raid lead-ins
+    quest_chain = quest.get('NextQuestIdChain', 0)
+    if quest_chain > 0:
+        # Check chain length (would need recursive lookup)
+        classification['conversion_type'] = 'STORY_REWRITE'
+        classification['notes'] = 'Part of quest chain - likely keystone narrative'
+    
+    # Category B: Structural Quest Hubs (HUB_NARRATIVE)
+    # - Clusters of quests around villages/forts
+    # - Mixed objectives
+    if quest_type in [1, 2, 3, 4, 5]:  # KILL, ITEM, EXPLORE, etc.
+        if quest_level >= 10 and quest_level <= 40:
+            classification['conversion_type'] = 'HUB_NARRATIVE'
+            classification['notes'] = 'Hub quest - partial rework recommended'
+    
+    # Category C: Generic Filler (CONTRACT_BOARD or CONTRACT_LOCAL)
+    # - Simple kill/collect quests
+    # - Low story relevance
+    if quest_type == 1:  # KILL
+        required_count = quest.get('RequiredNpcOrGoCount1', 0)
+        if required_count > 0 and required_count <= 20:
+            classification['conversion_type'] = 'CONTRACT_BOARD'
+            classification['notes'] = 'Simple kill quest - convert to task board'
+    elif quest_type == 2:  # ITEM
+        required_count = quest.get('RequiredItemCount1', 0)
+        if required_count > 0 and required_count <= 20:
+            classification['conversion_type'] = 'CONTRACT_LOCAL'
+            classification['notes'] = 'Simple collect quest - convert to local contract'
+    
+    # Category D: Low-Impact Lore Flavor (FLAVOR)
+    # - Short, flavor-driven quests
+    # - Non-progression-critical
+    if classification['conversion_type'] == 'FLAVOR':
+        classification['notes'] = 'Light lore quest - minor edits only'
+    
+    # Determine faction tag based on zone
+    for faction, zones in FACTION_ZONE_MAP.items():
+        if zone_id in zones:
+            classification['faction_tag'] = faction
+            break
+    
+    # Determine risk tier
+    risk_tier = ZONE_RISK_MAP.get(zone_id, 'GREEN')
+    classification['notes'] += f' | Risk: {risk_tier}'
+    
+    return classification
+
+def main():
+    parser = argparse.ArgumentParser(description='Enhanced quest classification')
+    parser.add_argument('--input', default='data/quests_raw.csv',
+                       help='Input CSV file (default: data/quests_raw.csv)')
+    parser.add_argument('--output-dir', default='output',
+                       help='Output directory (default: output)')
+    
+    args = parser.parse_args()
+    
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(exist_ok=True)
+    
+    # Load quests
+    quests = []
+    input_path = Path(args.input)
+    if not input_path.exists():
+        print(f"Error: Input file {args.input} not found")
+        return 1
+    
+    with open(input_path, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        quests = list(reader)
+    
+    print(f"Loaded {len(quests)} quests from {args.input}")
+    
+    # Classify quests
+    classifications = []
+    for quest in quests:
+        classification = classify_quest(quest)
+        classifications.append(classification)
+    
+    # Generate conversion map SQL
+    conversion_map_file = output_dir / 'quest_conversion_map.sql'
+    with open(conversion_map_file, 'w') as f:
+        f.write("-- Quest Conversion Map - Generated by classify_quests_enhanced.py\n\n")
+        
+        for cls in classifications:
+            faction_sql = f"'{cls['faction_tag']}'" if cls['faction_tag'] else "NULL"
+            contract_sql = f"{cls['contract_template_id']}" if cls['contract_template_id'] else "NULL"
+            notes_escaped = cls['notes'].replace("'", "''")
+            notes_sql = f"'{notes_escaped}'" if cls['notes'] else "NULL"
+            
+            f.write(f"INSERT INTO mortal_quest_conversion_map "
+                   f"(quest_id, conversion_type, faction_tag, contract_template_id, notes) "
+                   f"VALUES ({cls['quest_id']}, '{cls['conversion_type']}', {faction_sql}, "
+                   f"{contract_sql}, {notes_sql}) "
+                   f"ON DUPLICATE KEY UPDATE "
+                   f"conversion_type = '{cls['conversion_type']}', "
+                   f"faction_tag = {faction_sql}, "
+                   f"contract_template_id = {contract_sql}, "
+                   f"notes = {notes_sql};\n")
+    
+    print(f"Generated conversion map: {conversion_map_file}")
+    
+    # Generate statistics
+    stats = defaultdict(int)
+    for cls in classifications:
+        stats[cls['conversion_type']] += 1
+    
+    print("\nClassification Statistics:")
+    for conversion_type, count in stats.items():
+        print(f"  {conversion_type}: {count}")
+    
+    return 0
+
+if __name__ == '__main__':
+    exit(main())
+

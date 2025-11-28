@@ -1,0 +1,74 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+*.txt
+
+# Build artifacts
+build/
+*.o
+*.a
+*.so
+*.dylib
+
+# Logs
+*.log
+logs/
+Server.log
+Errors.log
+DBImport.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Node modules (will be installed in container)
+webportal/frontend/node_modules/
+webportal/backend/vendor/
+
+# Rust build artifacts
+launcher/target/
+**/target/
+
+# Database backups (too large, should be transferred separately)
+db_backup/
+*.sql.gz
+*.sql.bz2
+
+# Game client files (too large, should be transferred separately or via volume)
+gameclientfiles/
+
+# Archive directories
+archive_*/
+
+# Test files
+test_*
+*_test.go
+*_test.rs
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+

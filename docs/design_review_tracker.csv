@@ -1,0 +1,107 @@
+file,pillar,owner,last_reviewed,status,notes,follow_ups
+00-overview.md,1,design_lead,2025-11-22,ok,Added shared terminology glossary (Derived Level, Skill Bands, Season Renown, Task Boards, Contracts, Risk Tiers),None
+01-progression.md,1,design_lead,2025-11-22,ok,Clarified no-XP rule with meta-track allowance. Added cross-references to 84, 47, 88, 02, 75, 52,None
+02-combat.md,1,design_lead,2025-11-22,ok,Consistent with risk tiers and no-XP philosophy. Added cross-references to 84, 03, 11, 56, 01, 75, 64,None
+03-risk-zones.md,1,design_lead,2025-11-22,ok,No changes needed. Added cross-references to 02, 11, 56, 04, 13, 05, 06,None
+04-economy.md,1,design_lead,2025-11-22,ok,Matches regional banking and logistics. Added cross-references to 10, 37, 13, 03, 05, 19, 51,None
+05-crafting.md,1,design_lead,2025-11-22,ok,No changes needed. Added cross-references to 10, 04, 19, 75, 01, 03, 37,None
+06-pve.md,1,design_lead,2025-11-22,ok,Added risk-band callouts for PvE pillars. Added cross-references to 03, 01, 02, 76, 74, 48, 52, 04,None
+07-mounts.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 28, 13, 03, 37, 90, 05,None
+08-guilds-sovereignty.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 92, 97, 95, 98, 11, 04, 03, 72,None
+09-social-systems.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 38, 36, 52, 85, 08, 03,None
+10-crafting-economy.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 05, 04, 37, 13, 19, 03,None
+11-pvp-systems.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 02, 03, 56, 84, 34, 35, 92, 97,None
+12-world-simulation.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 03, 06, 05, 04, 52, 48,None
+13-caravans-contracts.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 04, 03, 02, 11, 76, 58, 51,None
+14-admin-tools.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 81, 85, 42, 40, 41,None
+15-ui-client.md,2,ui_lead,2025-11-22,ok,Added MortalUI shared data contract section. Added cross-references to 20, 18, 84, 03, 02, 85, 24,None
+16-database-schema.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 30, 01, 04, 08, 11, 51, 19, 75, 29,None
+17-implementation-roadmap.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 01, 03, 04, 05, 06, 11, 08, 84, 02, 15,None
+18-lfg-warfront-ui.md,2,ui_lead,2025-11-22,ok,No changes needed. Added cross-references to 15, 20, 38, 92, 91, 06, 33,None
+19-itemization.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 84, 75, 77, 78, 79, 03, 04, 05,None
+20-aio-ui-basics.md,2,ui_lead,2025-11-22,ok,No changes needed. Added cross-references to 15, 18, 13, 14, 38,None
+21-elden-systems.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 75, 02, 22, 59, 84, 64, 45,None
+22-healing-and-restoration.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 23, 50, 21, 64, 02, 84, 03,None
+23-mercenary-healers.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 29, 22, 06, 04, 23a, 33,None
+23a-merc-healer-archetypes.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 23, 29, 22, 33, 84, 06, 04,None
+24-webportal-mortal-atlas.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 49, 91, 58, 99, 08, 11, 04,None
+25-launcher-mortal-client.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 15, 24, 20, 101,None
+26-gear-visual-mapping.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 27, 19, 75, 30, 31, 67, 57,None
+27-gear-stats-and-etl.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 26, 19, 75, 84, 30, 67, 31,None
+28-mounts-living-system-and-mapping.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 07, 26, 27, 90, 30, 31, 13, 04,None
+29-companion-bond-and-mercenary-system.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 23, 23a, 07, 90, 28, 04, 06,None
+30-db-migrations-mortal-core.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 26, 27, 28, 29, 07, 19, 75, 16, 31,None
+31-mortal-core-registry.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 19, 64, 01, 30, 26, 27, 28, 29,None
+32-npc-and-encounter-rebalance.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 19, 84, 33, 06, 74, 02, 64,None
+33-instance-and-battleground-tier-mapping.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 32, 19, 06, 92, 34, 11,None
+34-mortal-arena-and-rating.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 11, 35, 02, 84, 36, 33,None
+35-mortal-pvp-vendors-and-rewards.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 34, 11, 19, 75, 36, 04, 92,None
+36-mortal-achievements-and-titles-core.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 35, 56, 33, 08, 11, 06,None
+37-economy-system-extensions.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 04, 10, 76, 05, 03, 08, 06,None
+38-social-and-onboarding-systems.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 09, 18, 47, 03, 01, 88, 15,None
+39-navigation-and-wayfinding.md,2,systems_owner,2025-11-22,ok,No changes needed. Added cross-references to 15, 24, 03, 13, 76, 08, 91, 58,None
+40-anti-bot-rmt-and-security.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 14, 42, 41, 04, 11, 08,None
+41-telemetry-and-balancing.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 40, 42, 14, 24, 04, 11, 06,None
+42-gm-tools-and-live-events.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 14, 40, 41, 08, 37, 48, 24, 15,None
+43-long-term-progression-and-seasons.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 52, 01, 84, 75, 36, 08, 19,None
+44-accessibility-and-ux-guidelines.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 15, 20, 18, 38,None
+45-eldens-eve-layer.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 91, 37, 48, 12, 06, 03, 24,None
+46-public-grouping-and-contribution.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 45, 06, 48, 38, 18, 92,None
+47-mentoring-and-build-loadouts.md,3,content_lead,2025-11-22,ok,Updated to use shared derived-level formula. Added cross-references to 01, 55, 84, 75, 88,None
+48-zone-invasions-and-cross-faction-pve.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 06, 03, 12, 37, 51, 08, 76,None
+49-webportal-wiki-spec.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 24, 89, 15, 38, 00,None
+50-lifeskills-fishing-and-first-aid.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 22, 05, 21, 03, 91, 04, 01,None
+51-factions-and-standing-system.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 86, 59, 60, 99, 76, 04, 56,None
+52-season-of-the-frontier.md,3,content_lead,2025-11-22,ok,Renamed Season XP to Season Renown throughout. Added cross-references to 01, 43, 51, 36, 48, 76, 91,None
+53-rune-augments-and-gear-build-system.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 75, 84, 55, 02, 05, 51, 19,None
+54-endless-contracts-defense-and-survival.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 76, 06, 51, 52, 03, 48, 59,None
+55-build-presets-and-loadouts.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 47, 75, 53, 01, 84, 03,None
+56-negative-titles-and-notoriety-labels.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 02, 03, 11, 51, 36,None
+57-appearance-codex-and-transmog.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 15, 24, 75, 19, 51, 52, 03,None
+58-world-contracts-and-map-pins.md,3,content_lead,2025-11-22,ok,Updated Season XP to Season Renown. Added cross-references to 76, 13, 24, 15, 03, 51, 48, 91,None
+59-shrine-and-faction-trials.md,3,content_lead,2025-11-22,ok,Updated Season XP to Season Renown. Added cross-references to 51, 60, 52, 61, 57, 02, 84,None
+60-faction-sanctums.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 51, 86, 59, 76, 04, 09,None
+61-weapon-legacy-and-history.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 57, 75, 19, 59, 11, 36,None
+62-core-lore-and-campaign-skeleton.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 68, 69, 70, 71, 72, 73, 51, 03, 22,None
+63-quest-conversion-strategy.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 68, 69, 70, 71, 72, 73, 76, 01, 51,None
+64-spell-and-ability-library.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 02, 75, 53, 84, 01, 55,None
+65-endgame-rhythm-and-lockouts.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 52, 92, 08, 48, 76, 91, 06,None
+66-legacy-services-and-qol.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 13, 08, 59, 04, 03, 01, 64,None
+67-conversion-automation-plan.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 63, 64, 19, 30, 31, 27,None
+68-prologue-and-act1-quest-pack.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 62, 69, 03, 04, 05, 01, 22, 38,None
+69-faction-intro-chains-ledger-and-shrine.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 62, 68, 51, 86, 60, 13, 22, 04,None
+70-act2-price-of-life-quest-pack.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 62, 68, 71, 03, 22, 11, 56, 13, 04,None
+71-act3-the-four-bargains-quest-pack.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 62, 70, 72, 51, 86, 59, 60, 91, 08,None
+72-act4-strongholds-and-invasions-campaign.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 08, 48, 92, 24, 15, 76, 51, 97, 98,None
+73-act5-endgame-campaign-the-lost-crown.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 74, 06, 33, 08, 48, 52, 36, 19, 32, 92,None
+74-cursed-artifacts-and-extraction-system.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 06, 03, 02, 11, 13, 73, 15,None
+75-mortal-gear-and-runes-spec.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 84, 53, 19, 55, 03, 02, 05,None
+76-dynamic-tasks-and-contracts-2-0-spec.md,3,content_lead,2025-11-22,ok,Updated level columns to derived-level and XP to renown. Added cross-references to 06, 13, 58, 37, 51, 01, 03,None
+77-mortal-itemization-t1-t2-starter-sets.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 75, 84, 19, 78, 79, 03, 01,None
+78-mortal-itemization-healer-ranger-mage.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 75, 77, 84, 19, 79, 22, 01,None
+79-drop-mapping-t1-t2-gear-and-runes.md,3,content_lead,2025-11-22,ok,No changes needed. Added cross-references to 77, 78, 75, 76, 06, 03, 19,None
+80-content-lane-frontier-bruiser-quest-and-loot-bundle.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 77, 87, 76, 03, 01, 51, 88,None
+81-archon-and-staff-chat-tags-eluna-spec.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 85, 14, 42,None
+82-mortal-autobroadcast-pack.sql.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 83, 03, 22, 76, 13, 04, 08, 91, 24,None
+83-mortal-event-broadcasts.sql-and-eluna.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 82, 48, 08, 92, 91, 42, 37,None
+84-mortal-core-stats-and-combat-model.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 02, 01, 03, 75, 19, 53, 11,None
+85-mortal-chat-and-channels.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 81, 14, 03, 11,None
+86-mortal-factions-and-standing.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 51, 59, 60, 99, 76, 04, 03,None
+87-mortal-archetype-grid.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 75, 84, 55, 77, 78, 51, 01,None
+88-mortal-progression-era-map.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 01, 47, 03, 06, 13, 08, 52,None
+89-mortal-wiki-structure.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 49, 24, 87, 88, 00, 84,None
+90-mortal-living-assets-companions.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 29, 07, 23, 28, 04, 03, 13,None
+91-mortal-anomalies-rifts-hellgates.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 24, 51, 58, 48, 06, 03, 11,None
+92-mortal-warfronts-siege-flow.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 08, 97, 95, 11, 02, 51, 35, 98,None
+93-mortal-cpp-module-index.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 17, 01, 84, 02, 04, 08, 11, 51, 16,None
+94-mortal-season1-launch-scope.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 17, 01, 84, 02, 75, 03, 04, 05, 11, 08,None
+95-wintergrasp-to-mortal-siege-adaptation.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 92, 08, 97, 98, 11, 02, 35,None
+96-mortal-siege-signup-flow.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 92, 95, 08, 97, 24, 18, 98,None
+97-mortal-guild-war-and-alliances.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 08, 92, 95, 11, 56, 51,None
+98-mortal-siege-prep-contracts.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 92, 95, 08, 76, 37, 51, 05,None
+99-mortal-faction-meta-civic-frontier-cartel-atlas.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 51, 86, 60, 24, 08, 11, 04,None
+100-mortal-post-war-aftermath-and-reconstruction.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 92, 08, 76, 51, 04, 37, 95,None
+101-mortal-addon-policy.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 15, 25, 20, 44,None
+102-mortal-siege-tuning-addendum-infantry-first.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 95, 96, 98, 92, 02, 11,None
+103-mortal-gear-vanguard-bulwark-set-t1-t2.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 75, 77, 84, 21, 02, 79, 87,None
+104-mortal-gear-set-drop-matrix-phase1.md,4,ops_lead,2025-11-22,ok,No changes needed. Added cross-references to 77, 78, 79, 103, 75, 06, 92,None
