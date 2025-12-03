@@ -1,53 +1,78 @@
-# Mortal Warcraft - AzerothCore Custom Server
+# Mortal Warcraft - AzerothCore Servers
 
-A comprehensive custom World of Warcraft 3.3.5a server built on AzerothCore with extensive modifications for survival gameplay.
+A collection of World of Warcraft 3.3.5a servers built on AzerothCore, featuring both custom survival gameplay and blizzlike era progression experiences.
 
 ## 🌿 Branches
 
-This repository contains two separate server realms:
+This repository contains multiple server configurations:
 
-- **`mortal-overhaul`** (default): Mortal Warcraft custom server with survival mechanics
+- **`mortal-overhaul`**: Mortal Warcraft custom server with survival mechanics (main)
 - **`realm2-era-progression`**: Classic Era progression server
+- **`copilot/update-upstream-without-breaking`**: **Blizzlike WoW 3.3.5a with AzerothCore** (NEW)
+  - Stock AzerothCore source code
+  - Authentic blizzlike experience
+  - Era progression focused
+  - Includes critical upstream bug fixes
+  - **See [BLIZZLIKE_BRANCH_README.md](BLIZZLIKE_BRANCH_README.md) for details**
 
 See [BRANCH_STRATEGY.md](BRANCH_STRATEGY.md) for branch usage and switching between realms.
 
-## 🎮 Overview
+## Current Branch: Blizzlike Era Progression
 
-Mortal Warcraft transforms the classic WoW experience into a hardcore survival MMO with:
-- Custom skill system replacing class abilities
-- Procedural crafting and quality system
-- Faction-based PvP and territory control
-- Dynamic events (sieges, warfronts, anomalies)
-- Survival mechanics (hunger, encumbrance, environmental hazards)
-- Custom UI and addon framework
+**You are viewing the blizzlike branch.** This branch contains:
+- ✅ Complete AzerothCore source code
+- ✅ Stock WoW 3.3.5a mechanics
+- ✅ 5 critical gameplay fixes from upstream
+- ✅ Era progression configuration
+- ✅ Upstream sync documentation
 
-## 📋 Quick Start
+**For custom Mortal Warcraft overhaul**, switch to the `mortal-overhaul` branch.
+
+## 🎮 Overview - Blizzlike Branch
+
+This branch provides an authentic World of Warcraft 3.3.5a experience using the complete AzerothCore source:
+
+### Blizzlike Features
+- ✅ **Stock AzerothCore** - Full unmodified source code
+- ✅ **9 Classes** - All retail classes with authentic abilities
+- ✅ **Retail Mechanics** - Blizzlike spell system, combat, and progression
+- ✅ **Era Progression** - Configure for Vanilla → TBC → WotLK phases
+- ✅ **Critical Fixes** - 5 important gameplay bugs fixed
+- ✅ **Upstream Tracking** - Stays synced with AzerothCore development
+
+### Key Differences from Custom Branches
+- **No custom skill systems** - Uses retail class/talent system
+- **No procedural crafting** - Standard profession system
+- **No survival mechanics** - Authentic WoW gameplay
+- **Goal**: Provide a stable, blizzlike 3.3.5a server experience
+
+See [BLIZZLIKE_BRANCH_README.md](BLIZZLIKE_BRANCH_README.md) for complete documentation.
+
+## 📋 Quick Start - Blizzlike Branch
 
 ### Prerequisites
-- Ubuntu 22.04+ (or Docker)
-- MySQL 8.0+
-- CMake 3.20+
-- GCC 11+
+- Ubuntu 20.04+ (or Docker)
+- MySQL 8.0+ or MariaDB 10.5+
+- CMake 3.16+
+- GCC 11+ or Clang 12+
 - 8GB+ RAM recommended
 
-### Local Development
+### Build & Run
 
 ```bash
-# Clone repository
-git clone <repository-url>
-cd wowpack
+# Clone this branch
+git clone -b copilot/update-upstream-without-breaking https://github.com/kdsmith18542/MortalWarcraft.git
+cd MortalWarcraft
 
-# Setup databases
-mysql -u root -p < sql/create_databases.sql
-
-# Build AzerothCore
-cd azerothcore
+# Create build directory
 mkdir build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=../env/dist
+
+# Configure and build
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/azeroth-server
 make -j$(nproc)
 make install
 
-# Configure
+# Setup databases (see BLIZZLIKE_BRANCH_README.md for details)
 cp env/dist/etc/worldserver.conf.dist env/dist/etc/worldserver.conf
 # Edit worldserver.conf with your database credentials
 
