@@ -7,6 +7,7 @@
 -- Gameobject entry for Forge of Fate is typically around ID 192829
 
 -- Update the gameobject to be usable as a forge
+-- Note: Entry 192829 is verified as "Forge of Fate" in Dalaran
 UPDATE `gameobject_template` SET
     `type` = 8,  -- Type 8 is GAMEOBJECT_TYPE_SPELL_FOCUS
     `data0` = 0, -- SpellFocusType
@@ -15,7 +16,7 @@ UPDATE `gameobject_template` SET
     `data3` = 0,
     `data4` = 0,
     `data5` = 0
-WHERE `entry` = 192829 AND `name` LIKE '%Forge%';
+WHERE `entry` = 192829;
 
 -- Alternative: If the above doesn't work, we may need to add an areatrigger
 -- For now, this should enable basic forge functionality

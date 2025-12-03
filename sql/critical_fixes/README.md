@@ -463,7 +463,7 @@ Legend:
 
 ### 012 - Thunderstorm Clearcasting (Issue #23326)
 **Impact**: Medium - Shaman Talent Proc
-- **Problem**: Thunderstorm crits don't grant Elearcasting buff
+- **Problem**: Thunderstorm crits don't grant Clearcasting buff
 - **Solution**: Added proc flags and spell proc event entries
 - **Status**: Complete database fix
 - **Applies to**: Elemental Shaman talent interactions
@@ -601,11 +601,6 @@ Legend:
   - Focus on WotLK vehicle quests and combat mechanics
   - Improved warrior/druid mobility and combat interactions
   
-- **v2.0** (Dec 3, 2025): Expanded release with 15 critical fixes
-  - Added 10 new fixes covering spell mechanics, NPCs, and PvP interactions
-  - Focus on vanilla and early WotLK content
-  - Improved threat mechanics and class ability interactions
-
 - **v2.0** (Dec 3, 2025): Expanded release with 15 critical fixes
   - Added 10 new fixes covering spell mechanics, NPCs, and PvP interactions
   - Focus on vanilla and early WotLK content
