@@ -1,37 +1,30 @@
 # Auto detect text files and perform LF normalization
-* text=auto
+* text eol=lf
 
-# Source files
-*.cpp text eol=lf
-*.h text eol=lf
-*.c text eol=lf
-*.go text eol=lf
-*.rs text eol=lf
-*.js text eol=lf
-*.ts text eol=lf
-*.tsx text eol=lf
-*.json text eol=lf
-*.yml text eol=lf
-*.yaml text eol=lf
-*.xml text eol=lf
-*.sql text eol=lf
-*.lua text eol=lf
-*.sh text eol=lf
-*.md text eol=lf
-*.txt text eol=lf
-*.conf text eol=lf
-*.toml text eol=lf
+# Whitespace rules
+# strict (no trailing, no tabs)
+*.cpp    whitespace=trailing-space,space-before-tab,tab-in-indent,cr-at-eol
+*.h      whitespace=trailing-space,space-before-tab,tab-in-indent,cr-at-eol
 
-# Binary files
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.ico binary
-*.mpq binary
-*.dbc binary
-*.wdt binary
-*.adt binary
-*.mp3 binary
-*.wav binary
+# normal (no trailing)
+*.sql    whitespace=trailing-space,space-before-tab,cr-at-eol
+*.txt    whitespace=trailing-space,space-before-tab,cr-at-eol
 
+# special files which must ignore whitespace
+*.patch  whitespace=-trailing-space eol=lf
+*.diff   whitespace=-trailing-space eol=lf
+
+# Standard to msysgit
+*.doc    diff=astextplain
+*.DOC    diff=astextplain
+*.docx   diff=astextplain
+*.DOCX   diff=astextplain
+*.dot    diff=astextplain
+*.DOT    diff=astextplain
+*.pdf    diff=astextplain
+*.PDF    diff=astextplain
+*.rtf    diff=astextplain
+*.RTF    diff=astextplain
+
+# Ignore sql/* files
+data/sql/*    linguist-documentation
