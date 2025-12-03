@@ -115,6 +115,21 @@ Each fix includes verification steps. Test checklist:
 - [ ] Fix 003: Test Blade of Eternal Darkness (Item 17780) proc crits
 - [ ] Fix 004: Test profession learning limits with `.learn all recipes`
 - [ ] Fix 005: Test Eye of the Storm immunity falling behavior
+- [ ] Fix 006: Test Magmoth Fire Totem (Entry 25444) spell casting
+- [ ] Fix 007: Test Forge of Fate smelting in Dalaran
+- [ ] Fix 008: Test Prayer of Healing through walls/obstacles
+- [ ] Fix 009: Test Replenishment aura doesn't cause combat
+- [ ] Fix 010: Test Shadowmeld grounding instant spells
+- [ ] Fix 011: Test Shadowfiend mana during Cyclone
+- [ ] Fix 012: Test Thunderstorm critting grants Clearcasting
+- [ ] Fix 013: Test Freezing Trap reflection by Spell Reflection
+- [ ] Fix 014: Test Horde Siege Tank Demoralizer targeting
+- [ ] Fix 015: Test Rogue combo point display after Cold Blood
+- [ ] Fix 016: Test Tahu Sagewind spawn in Thunder Bluff
+- [ ] Fix 017: Test healing threat range limitations
+- [ ] Fix 018: Test Grounding Totem vs Chain Lightning
+- [ ] Fix 019: Test eating/drinking during talent allocation
+- [ ] Fix 020: Test Call of Flames timing in Utgarde Pinnacle
 
 ### In-Game Testing Commands
 
@@ -140,6 +155,83 @@ Each fix includes verification steps. Test checklist:
 -- Fix 005 Testing
 -- Requires actual Eye of the Storm battleground
 .tele EyeOfTheStorm
+
+-- Fix 006 Testing
+.go creature id 25444
+-- Attack the totem's owner, observe fireball casts
+
+-- Fix 007 Testing
+.tele Dalaran
+.go xyz 5922 691 643 571 6
+.additem 2770  -- Copper Ore
+-- Try smelting near the forge
+
+-- Fix 008 Testing
+.levelup 30
+.learn 596  -- Prayer of Healing
+-- Stand behind obstacle from party member, cast
+
+-- Fix 009 Testing
+-- Test any Replenishment-granting ability
+.learn 31878  -- Paladin: Judgements of the Wise
+-- Use in combat, shouldn't pull extra mobs
+
+-- Fix 010 Testing
+.morph 10  -- Night Elf
+.learn 58984  -- Shadowmeld
+-- Have someone cast Polymorph, use Shadowmeld at cast end
+
+-- Fix 011 Testing
+.learn 34433  -- Shadowfiend (Priest)
+.learn 33786  -- Cyclone (Druid)
+-- Cast Shadowfiend, get cycloned, check mana
+
+-- Fix 012 Testing
+.learn 51490  -- Thunderstorm
+.learn 16246  -- Clearcasting
+-- Cast Thunderstorm until crit, check for Clearcasting buff
+
+-- Fix 013 Testing
+.learn 1499  -- Freezing Trap
+.learn 23920  -- Spell Reflection
+-- Place trap, reflect it with warrior
+
+-- Fix 014 Testing
+.quest add 11652  -- The Plains of Nasam
+.go creature id 25588
+-- Mount siege tank, test Demoralizer on barrels
+
+-- Fix 015 Testing
+-- Create Rogue
+.learn 14177  -- Cold Blood
+.learn 14179  -- Relentless Strikes
+.learn 2098  -- Eviscerate
+-- Build 4 combo points, use Cold Blood, Eviscerate
+
+-- Fix 016 Testing
+.tele Thunderbluff
+.go xyz -1040.5 218.2 129.19 1 0
+-- Look for Tahu Sagewind and rug
+
+-- Fix 017 Testing
+-- Have healer and DPS in group
+-- Pull mob, have healer stay 50+ yards away
+-- Healer heals DPS, mob should not aggro healer
+
+-- Fix 018 Testing
+.learn 8177  -- Grounding Totem
+.learn 421  -- Chain Lightning
+-- Cast Grounding, cast Chain Lightning, check chain stops
+
+-- Fix 019 Testing
+.levelup 11  -- Get talent points
+.additem 4536  -- Food
+-- Eat food, open talents, allocate point
+
+-- Fix 020 Testing
+.tele 1196  -- Utgarde Pinnacle
+.go xyz 276 -293 105
+-- Fight Svala, observe Call of Flames timing
 ```
 
 ## Known Limitations
@@ -236,6 +328,21 @@ Found an issue with these fixes?
 | 003 | Partial  | Required | -      | -      |
 | 004 | ✓        | -        | ✓      | -      |
 | 005 | Partial  | Required | -      | ✓      |
+| 006 | ✓        | -        | -      | -      |
+| 007 | ✓        | -        | -      | -      |
+| 008 | Partial  | Recommended | -   | -      |
+| 009 | ✓        | -        | -      | -      |
+| 010 | Partial  | Required | -      | -      |
+| 011 | Partial  | Required | -      | -      |
+| 012 | ✓        | -        | -      | -      |
+| 013 | Partial  | Required | -      | -      |
+| 014 | ✓        | -        | -      | -      |
+| 015 | Partial  | Recommended | -   | -      |
+| 016 | ✓        | -        | -      | -      |
+| 017 | Partial  | Required | -      | -      |
+| 018 | Partial  | Required | -      | -      |
+| 019 | Partial  | Recommended | -   | -      |
+| 020 | ✓        | -        | -      | -      |
 
 Legend:
 - ✓ = Fully supported with this approach
@@ -243,8 +350,118 @@ Legend:
 - Required = Necessary for complete solution
 - Recommended = Optional but improves fix
 
+### 006 - Magmoth Fire Totem (Issue #23680)
+**Impact**: Medium - Borean Tundra Content
+- **Problem**: Magmoth Fire Totem does nothing, doesn't cast spells
+- **Solution**: Added SAI script to make totem cast fireball every 3 seconds
+- **Status**: Complete database fix
+- **Applies to**: Borean Tundra, level 70-72 content
+
+### 007 - Forge of Fate Dalaran (Issue #23770)
+**Impact**: Low - Mining Convenience
+- **Problem**: Forge of Fate in Dalaran doesn't work as a forge for smelting
+- **Solution**: Updated gameobject type to allow smelting nearby
+- **Status**: Complete database fix
+- **Applies to**: Dalaran, all mining professions
+
+### 008 - Prayer of Healing LOS (Issue #21976)
+**Impact**: Medium - Priest Healing
+- **Problem**: Prayer of Healing requires LOS to all targets, shouldn't
+- **Solution**: Added spell script preparation and attribute changes
+- **Status**: Partial fix (core modification recommended)
+- **Applies to**: All Priest healing content
+
+### 009 - Replenishment Threat (Issue #12115)
+**Impact**: High - Threat Mechanics
+- **Problem**: Replenishment aura generates threat when it shouldn't
+- **Solution**: Updated spell attributes to prevent threat generation
+- **Status**: Complete database fix
+- **Applies to**: All classes with Replenishment talents
+
+### 010 - Shadowmeld Grounding (Issue #22455)
+**Impact**: Medium - Night Elf PvP
+- **Problem**: Shadowmeld doesn't ground instant-cast spells with proper timing
+- **Solution**: Spell script preparation for timing-based grounding
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Night Elf racial ability, PvP content
+
+### 011 - Shadowfiend Cyclone (Issue #22536)
+**Impact**: Medium - Druid/Priest Interaction
+- **Problem**: Shadowfiend restores mana while priest is cycloned
+- **Solution**: Added spell script to check for cyclone state
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Druid Cyclone + Priest Shadowfiend interaction
+
+### 012 - Thunderstorm Clearcasting (Issue #23326)
+**Impact**: Medium - Shaman Talent Proc
+- **Problem**: Thunderstorm crits don't grant Elearcasting buff
+- **Solution**: Added proc flags and spell proc event entries
+- **Status**: Complete database fix
+- **Applies to**: Elemental Shaman talent interactions
+
+### 013 - Freezing Trap Reflection (Issue #22028)
+**Impact**: Medium - Hunter Trap PvP
+- **Problem**: Freezing Trap can't be reflected by Spell Reflection
+- **Solution**: Removed cant-be-reflected flag, added reflection script
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Hunter traps, Warrior/Engineering reflection mechanics
+
+### 014 - Siege Tank Demoralizer (Issue #21276)
+**Impact**: Medium - Borean Tundra Vehicles
+- **Problem**: Demoralizer spell direction wrong, hits barrels incorrectly
+- **Solution**: Fixed spell targeting, made barrels immune to combat
+- **Status**: Complete database fix
+- **Applies to**: Borean Tundra vehicle quests
+
+### 015 - Combo Point Visual (Issue #22068)
+**Impact**: Low - Rogue UI
+- **Problem**: Combo points display incorrectly with Cold Blood + Relentless Strikes
+- **Solution**: Added spell script to force combo point refresh
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Rogue finishers, combo point system
+
+### 016 - Tahu Sagewind Missing (Issue #22752)
+**Impact**: Low - Thunder Bluff NPC
+- **Problem**: Tahu Sagewind NPC missing from Thunder Bluff
+- **Solution**: Added NPC spawn, conversation scripts, and rug gameobject
+- **Status**: Complete database fix
+- **Applies to**: Thunder Bluff lore NPCs
+
+### 017 - Healer Aggro Range (Issue #3655)
+**Impact**: High - Healing Threat
+- **Problem**: Healing can pull mobs from unlimited range
+- **Solution**: Reduced healing threat coefficient, added range checks
+- **Status**: Mitigation (core fix needed for complete solution)
+- **Applies to**: All healing classes, threat generation
+
+### 018 - Grounding Totem Chain Lightning (Issue #21627)
+**Impact**: Medium - Shaman Totem Interaction
+- **Problem**: Grounding Totem doesn't fully consume Chain Lightning
+- **Solution**: Modified Chain Lightning to stop chaining when grounded
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Shaman Grounding Totem mechanics
+
+### 019 - Eating Talent Animation (Issue #23827)
+**Impact**: Low - Quality of Life
+- **Problem**: Allocating talent points cancels eating/drinking animation
+- **Solution**: Modified aura interrupt flags on food/drink buffs
+- **Status**: Partial fix (core modification recommended)
+- **Applies to**: All classes, food/drink mechanics
+
+### 020 - Call of Flames Timing (Issue #21513)
+**Impact**: Medium - Utgarde Pinnacle Boss
+- **Problem**: Svala Sorrowgrave's Call of Flames ticks too fast
+- **Solution**: Fixed spell tick timing to 3 seconds between ticks
+- **Status**: Complete database fix
+- **Applies to**: Utgarde Pinnacle, level 80 dungeon content
+
 ## Version History
 
+- **v2.0** (Dec 3, 2025): Expanded release with 15 critical fixes
+  - Added 10 new fixes covering spell mechanics, NPCs, and PvP interactions
+  - Focus on vanilla and early WotLK content
+  - Improved threat mechanics and class ability interactions
+  
 - **v1.0** (Dec 3, 2025): Initial release with 5 critical fixes
   - SAI Event Link workarounds
   - Surveyor Candress balance fix
