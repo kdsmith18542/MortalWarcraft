@@ -11,7 +11,8 @@
 -- This may already be in the DBC, but we need to ensure proper spawn
 
 -- Spawn Tahu Sagewind in Thunder Bluff Elder Rise tent
--- Coordinates based on upstream data: approximately -1040, 218, 129 in Thunder Bluff
+-- Coordinates based on issue report and wowhead.com data for Elder Rise tent location
+-- Map: 1 (Kalimdor), Zone: 1638 (Thunder Bluff), Position: Elder Rise tent interior
 DELETE FROM `creature` WHERE `id` = 34528;
 INSERT INTO `creature` (`id`, `map`, `zone`, `spawnMask`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `MovementType`) VALUES
 (34528, 1, 1638, 1, -1040.5, 218.2, 129.19, 4.71, 300, 0);

@@ -7,17 +7,20 @@
 -- Feral Charge - Bear (Druid): 16979
 
 -- Update Charge to allow terrain following
+-- Note: Flag usage here is non-standard and intended as preparation for C++ implementation
+-- The actual terrain-following logic must be implemented in the core spell handler
 UPDATE `spell_dbc` SET
     `AttributesEx2` = `AttributesEx2` | 0x00000004,  -- SPELL_ATTR2_CAN_TARGET_NOT_IN_LOS
-    `AttributesEx5` = `AttributesEx5` | 0x00020000,  -- SPELL_ATTR5_USABLE_WHILE_STUNNED (reuse for terrain)
+    `AttributesEx5` = `AttributesEx5` | 0x00020000,  -- Custom flag for terrain following (C++ required)
     `Effect1` = 121,  -- SPELL_EFFECT_LEAP_BACK (modified for forward charge with Z-axis)
     `EffectMiscValueB1` = 1  -- Allow vertical movement
 WHERE `Id` IN (100, 6178, 11578);
 
 -- Apply same fix to Druid Feral Charge - Bear
+-- Note: Same non-standard flag usage as above
 UPDATE `spell_dbc` SET
     `AttributesEx2` = `AttributesEx2` | 0x00000004,
-    `AttributesEx5` = `AttributesEx5` | 0x00020000,
+    `AttributesEx5` = `AttributesEx5` | 0x00020000,  -- Custom flag for terrain following (C++ required)
     `Effect1` = 121,
     `EffectMiscValueB1` = 1
 WHERE `Id` = 16979;

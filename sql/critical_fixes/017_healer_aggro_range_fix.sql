@@ -7,12 +7,12 @@
 -- We can mitigate this by adjusting threat multipliers and adding range limits
 
 -- Add spell script to check range for healing threat
+-- Note: This is a placeholder for the C++ spell script system
+-- Only add for major healing spells to avoid database bloat
 DELETE FROM `spell_script_names` WHERE `ScriptName` = 'spell_healing_threat_range_check';
-INSERT INTO `spell_script_names` (`spell_id`, `ScriptName`) 
-SELECT `Id`, 'spell_healing_threat_range_check'
-FROM `spell_dbc`
-WHERE (`Effect1` = 10 OR `Effect2` = 10 OR `Effect3` = 10)  -- SPELL_EFFECT_HEAL
-  AND `Id` < 100000;  -- Exclude custom spells
+-- Comment out bulk insert to avoid thousands of entries
+-- When implementing C++, use spell family checks instead of per-spell registration
+-- INSERT INTO `spell_script_names` (`spell_id`, `ScriptName`) VALUES (...specific spells...);
 
 -- Reduce healing threat coefficient globally (blizzlike adjustment)
 -- This helps mitigate the long-range pull issue
