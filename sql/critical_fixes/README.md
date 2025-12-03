@@ -130,6 +130,16 @@ Each fix includes verification steps. Test checklist:
 - [ ] Fix 018: Test Grounding Totem vs Chain Lightning
 - [ ] Fix 019: Test eating/drinking during talent allocation
 - [ ] Fix 020: Test Call of Flames timing in Utgarde Pinnacle
+- [ ] Fix 021: Test Lightning Infused Relics Collect Data spell
+- [ ] Fix 022: Test Dun-da-Dun-tah quest RP and timing
+- [ ] Fix 023: Test Tinky Wickwhistle completion RP
+- [ ] Fix 024: Test Battle for Undercity elevator state
+- [ ] Fix 025: Test Aces High vehicle abilities and parachute
+- [ ] Fix 026: Test Army of Damned Deathstorm friendly fire
+- [ ] Fix 027: Test Assault by Air spear gun attacks
+- [ ] Fix 028: Test Warrior Cleave with Sweeping Strikes
+- [ ] Fix 029: Test Charge terrain climbing in WSG
+- [ ] Fix 030: Test Thorim Chain Lightning 8 yard range
 
 ### In-Game Testing Commands
 
@@ -232,6 +242,55 @@ Each fix includes verification steps. Test checklist:
 .tele 1196  -- Utgarde Pinnacle
 .go xyz 276 -293 105
 -- Fight Svala, observe Call of Flames timing
+
+-- Fix 021 Testing
+.quest add 11494  -- Lightning Infused Relics
+.go c i 24807  -- Walt
+-- Get disguise, go to relic, use Collect Data
+
+-- Fix 022 Testing
+.quest add 12082  -- Dun-da-Dun-tah!
+.go c i 26814  -- Harrison Jones
+-- Start quest, observe RP timing and snake
+
+-- Fix 023 Testing
+.quest add 11699  -- I'm Stuck in this Damned Cage
+.go c i 25714  -- Tinky Wickwhistle
+-- Complete and turn in quest, watch RP
+
+-- Fix 024 Testing
+.quest add 13367  -- Battle for Undercity (Horde)
+-- Start quest event, observe elevator state
+
+-- Fix 025 Testing
+.quest add 13413  -- Aces High!
+.go c i 32548  -- Corastrasza
+-- Summon Skytalon, check abilities and dismount
+
+-- Fix 026 Testing
+.quest add 13395  -- Army of the Damned
+.go c i 31795  -- Arthas vehicle
+-- Use Deathstorm, verify no player damage
+
+-- Fix 027 Testing
+.quest add 13309  -- Assault by Air
+.go c i 31808  -- Proto-Drake
+-- Ride drake, verify spear guns attack
+
+-- Fix 028 Testing
+.levelup 30  -- Warrior with Sweeping Strikes
+.learn 12328  -- Sweeping Strikes
+.learn 845  -- Cleave
+-- Use SS, then Cleave on 2+ targets
+
+-- Fix 029 Testing
+.bg join 2  -- Warsong Gulch
+-- Try charging up to graveyard from base
+
+-- Fix 030 Testing
+.tele Ulduar
+-- Fight Thorim, spread >8 yards apart
+-- Observe Chain Lightning doesn't jump
 ```
 
 ## Known Limitations
@@ -343,6 +402,16 @@ Found an issue with these fixes?
 | 018 | Partial  | Required | -      | -      |
 | 019 | Partial  | Recommended | -   | -      |
 | 020 | ✓        | -        | -      | -      |
+| 021 | Partial  | Required | -      | -      |
+| 022 | Partial  | Recommended | -   | -      |
+| 023 | ✓        | -        | -      | -      |
+| 024 | Partial  | Required | -      | -      |
+| 025 | Partial  | Required | -      | -      |
+| 026 | Partial  | Required | -      | -      |
+| 027 | Partial  | Required | -      | -      |
+| 028 | Partial  | Required | -      | -      |
+| 029 | Partial  | Required | -      | -      |
+| 030 | Partial  | Required | -      | -      |
 
 Legend:
 - ✓ = Fully supported with this approach
@@ -455,7 +524,87 @@ Legend:
 - **Status**: Complete database fix
 - **Applies to**: Utgarde Pinnacle, level 80 dungeon content
 
+### 021 - Lightning Infused Relics (Issue #23596)
+**Impact**: High - Quest Breaking
+- **Problem**: Collect Data vehicle spell warps player to Westfall graveyard
+- **Solution**: Fixed spell effect and targeting, removed teleport
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Storm Peaks quest content
+
+### 022 - Dun-da-Dun-tah Quest (Issue #23790)
+**Impact**: Medium - Quest Polish
+- **Problem**: Harrison Jones timing issues, snake attackable, drakkars spawn incorrectly
+- **Solution**: Fixed movement speed, RP timing, prevented poison stacking
+- **Status**: Partial fix (core modification recommended)
+- **Applies to**: Sholazar Basin quest chain
+
+### 023 - Tinky Wickwhistle RP (Issue #23777)
+**Impact**: Low - Quest Completion RP
+- **Problem**: No RP when turning in quest
+- **Solution**: Added SAI script for teleport visual and dialogue
+- **Status**: Complete database fix
+- **Applies to**: Borean Tundra quest content
+
+### 024 - Battle for Undercity Lifts (Issue #23792)
+**Impact**: Medium - Quest Mechanics
+- **Problem**: Lifts work during quest when they should be broken
+- **Solution**: Disabled elevators during quest phase
+- **Status**: Partial fix (phasing needed)
+- **Applies to**: Undercity quest event
+
+### 025 - Aces High Quest (Issue #23834)
+**Impact**: High - Quest Functionality
+- **Problem**: Multiple vehicle issues - wrong abilities, no parachute, NPCs don't attack
+- **Solution**: Fixed vehicle spells, added Blazing Speed, parachute, NPC AI
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Dragonblight quest content
+
+### 026 - Army of Damned Deathstorm (Issue #23896)
+**Impact**: High - Quest Fairness
+- **Problem**: Player takes damage from Arthas's Deathstorm ability
+- **Solution**: Updated spell to only hit hostile targets
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Icecrown quest vehicle content
+
+### 027 - Assault by Air Spear Guns (Issue #21680)
+**Impact**: Medium - Quest Mechanics
+- **Problem**: Spear guns don't attack, no parachute on dismount
+- **Solution**: Added SAI for attacks, parachute on dismount
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Icecrown vehicle quest
+
+### 028 - Cleave Sweeping Strikes (Issue #22427)
+**Impact**: Medium - Warrior DPS
+- **Problem**: Cleave doesn't consume 2 Sweeping Strikes stacks
+- **Solution**: Added proc events for proper interaction
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Warrior melee combat, all levels
+
+### 029 - Charge Terrain Climbing (Issue #22331)
+**Impact**: Medium - Warrior/Druid Mobility
+- **Problem**: Can't charge up terrain in WSG graveyards
+- **Solution**: Updated spell to allow vertical movement
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Warsong Gulch, Warrior/Druid charge abilities
+
+### 030 - Thorim Chain Lightning Range (Issue #22498)
+**Impact**: Medium - Ulduar Boss Mechanics
+- **Problem**: Chain Lightning jumps beyond intended 8 yard range
+- **Solution**: Fixed spell radius and distance checks
+- **Status**: Partial fix (core modification needed)
+- **Applies to**: Ulduar raid, Thorim encounter
+
 ## Version History
+
+- **v3.0** (Dec 3, 2025): Comprehensive release with 25 critical fixes
+  - Added 10 more quest and vehicle fixes (021-030)
+  - Focus on WotLK vehicle quests and combat mechanics
+  - Improved warrior/druid mobility and combat interactions
+  
+- **v2.0** (Dec 3, 2025): Expanded release with 15 critical fixes
+  - Added 10 new fixes covering spell mechanics, NPCs, and PvP interactions
+  - Focus on vanilla and early WotLK content
+  - Improved threat mechanics and class ability interactions
 
 - **v2.0** (Dec 3, 2025): Expanded release with 15 critical fixes
   - Added 10 new fixes covering spell mechanics, NPCs, and PvP interactions
