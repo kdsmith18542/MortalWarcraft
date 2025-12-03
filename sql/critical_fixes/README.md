@@ -190,6 +190,7 @@ WHERE entry = 16522;
 
 ```sql
 -- Check for players with >2 professions
+-- Note: For better performance, ensure index exists: CREATE INDEX idx_skill_guid ON character_skills(skill, guid);
 SELECT guid, COUNT(DISTINCT skill) as prof_count
 FROM character_skills
 WHERE skill IN (164, 165, 171, 182, 186, 197, 202, 333, 393, 755, 773)
