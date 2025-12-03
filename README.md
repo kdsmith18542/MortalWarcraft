@@ -1,17 +1,26 @@
-# Mortal Warcraft - AzerothCore Servers
+# Mortal Warcraft - Custom AzerothCore Fork
 
-A collection of World of Warcraft 3.3.5a servers built on AzerothCore, featuring both custom survival gameplay and blizzlike era progression experiences.
+> **⚠️ This is a custom fork of [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk)** maintained by Mortal Warcraft for our blizzlike era progression realm.
+> 
+> **Upstream Project**: https://github.com/azerothcore/azerothcore-wotlk
 
-## 🌿 Branches
+This repository features both custom survival gameplay and a blizzlike era progression realm, built on the robust AzerothCore emulator framework for World of Warcraft 3.3.5a servers.
+
+## 🌿 About This Fork
+
+This is a **custom fork** of AzerothCore maintained by Mortal Warcraft for our blizzlike era progression realm.
+
+### Branches
 
 This repository contains multiple server configurations:
 
 - **`mortal-overhaul`**: Mortal Warcraft custom server with survival mechanics (main)
 - **`realm2-era-progression`**: Classic Era progression server
-- **`copilot/update-upstream-without-breaking`**: **Blizzlike WoW 3.3.5a with AzerothCore** (NEW)
-  - Stock AzerothCore source code
+- **`copilot/update-upstream-without-breaking`**: **Blizzlike WoW 3.3.5a Era Progression Realm** (THIS BRANCH)
+  - Custom fork of AzerothCore for Mortal Warcraft
+  - Stock AzerothCore source code with selective upstream updates
   - Authentic blizzlike experience
-  - Era progression focused
+  - Era progression focused (Vanilla → TBC → WotLK)
   - Includes critical upstream bug fixes
   - **See [BLIZZLIKE_BRANCH_README.md](BLIZZLIKE_BRANCH_README.md) for details**
 
@@ -19,16 +28,23 @@ See [BRANCH_STRATEGY.md](BRANCH_STRATEGY.md) for branch usage and switching betw
 
 ## Current Branch: Blizzlike Era Progression
 
-**You are viewing the blizzlike branch.** This branch contains:
+**You are viewing the Mortal Warcraft custom fork for blizzlike era progression.**
+
+This is a custom fork of [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk) maintained specifically for Mortal Warcraft's blizzlike progression realm.
+
+This branch contains:
 - ✅ Complete AzerothCore source code
 - ✅ Stock WoW 3.3.5a mechanics
 - ✅ 5 critical gameplay fixes from upstream
 - ✅ Era progression configuration
 - ✅ Upstream sync documentation
+- ✅ Custom fork maintained for Mortal Warcraft project
 
 **For custom Mortal Warcraft overhaul**, switch to the `mortal-overhaul` branch.
 
 ## 🎮 Overview - Blizzlike Branch
+
+**This is a custom fork of AzerothCore for Mortal Warcraft's blizzlike era progression realm.**
 
 This branch provides an authentic World of Warcraft 3.3.5a experience using the complete AzerothCore source:
 
@@ -60,7 +76,7 @@ See [BLIZZLIKE_BRANCH_README.md](BLIZZLIKE_BRANCH_README.md) for complete docume
 ### Build & Run
 
 ```bash
-# Clone this branch
+# Clone this branch (Mortal Warcraft custom fork - blizzlike era progression)
 git clone -b copilot/update-upstream-without-breaking https://github.com/kdsmith18542/MortalWarcraft.git
 cd MortalWarcraft
 
@@ -239,13 +255,26 @@ tail -f azerothcore/env/dist/logs/worldserver.log
 
 ## 📄 License
 
-[Your License Here]
+This project inherits the **GNU AGPL v3.0** license from AzerothCore.
+
+See [LICENSE](LICENSE) for full details.
+
+**Note**: This is a custom fork maintained by Mortal Warcraft. The original AzerothCore project can be found at https://github.com/azerothcore/azerothcore-wotlk
 
 ## 🙏 Acknowledgments
 
-- AzerothCore team
+**This project is a custom fork of AzerothCore.**
+
+### Upstream Project
+- **AzerothCore**: https://github.com/azerothcore/azerothcore-wotlk
+- **License**: GNU AGPL v3.0
+- **Documentation**: https://www.azerothcore.org/wiki/
+
+### Credits
+- AzerothCore team and contributors for the core emulator
 - WoW 3.3.5a community
-- All contributors
+- Mortal Warcraft team for this custom fork
+- All contributors to this repository
 
 ## 📞 Support
 
