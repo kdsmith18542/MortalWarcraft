@@ -1,15 +1,20 @@
 # Blizzlike Era Progression Branch
 
+> **⚠️ This is a custom fork of [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk)** maintained by Mortal Warcraft.
+
 ## Overview
 
-This branch contains a **blizzlike WoW 3.3.5a server** based on AzerothCore, focused on providing an authentic era progression experience. This is separate from the custom Mortal Warcraft overhaul in other branches.
+This branch contains a **custom fork** of AzerothCore configured as a **blizzlike WoW 3.3.5a server** for Mortal Warcraft's era progression realm. It provides an authentic era progression experience and is maintained separately from the custom Mortal Warcraft overhaul in other branches.
 
 ## Branch Purpose
 
+This is a **custom fork** maintained for Mortal Warcraft's blizzlike era progression realm:
+
 - **Blizzlike Gameplay**: Authentic WoW 3.3.5a experience
-- **Era Progression**: Classic content progression approach
+- **Era Progression**: Classic content progression approach (Vanilla → TBC → WotLK)
 - **Bug Fixes**: Includes critical gameplay fixes from upstream
 - **Stable Base**: Uses official AzerothCore source code
+- **Custom Fork**: Maintained separately for Mortal Warcraft project
 
 ## Differences from Main Branch
 
@@ -87,7 +92,7 @@ Configure your server for era-style progression:
 ### Build Instructions
 
 ```bash
-# 1. Clone this branch
+# 1. Clone this branch (Mortal Warcraft custom fork)
 git clone -b copilot/update-upstream-without-breaking https://github.com/kdsmith18542/MortalWarcraft.git
 cd MortalWarcraft
 
@@ -423,9 +428,11 @@ See `LICENSE` file for details.
 
 ## Credits
 
-- **AzerothCore Team** - Core development
+**This is a custom fork of AzerothCore maintained by Mortal Warcraft.**
+
+- **AzerothCore Team** - Core development and upstream project (https://github.com/azerothcore/azerothcore-wotlk)
 - **Community Contributors** - Modules and fixes
-- **This Branch** - Blizzlike era progression configuration + critical fixes
+- **Mortal Warcraft Team** - Custom fork maintenance, blizzlike era progression configuration, and critical fixes
 
 ---
 
