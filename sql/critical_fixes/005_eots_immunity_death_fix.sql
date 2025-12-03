@@ -67,10 +67,13 @@ void BattlegroundEY::HandlePlayerUnderMap(Player* player)
 -- WORKAROUND SCRIPT
 -- ============================================================================
 
--- Add a database entry for GM macro to quickly fix stuck players
-DELETE FROM `command` WHERE `name` IN ('eots unstuck');
-INSERT INTO `command` (`name`, `security`, `help`) VALUES
-('eots unstuck', 1, 'Syntax: .eots unstuck\nTeleports you to your team\'s graveyard in Eye of the Storm.');
+-- Note: Custom GM commands should be added via C++ code, not database
+-- For a quick workaround, GMs can use existing teleport commands:
+-- .tele <location_name>
+-- 
+-- Or create a GM macro:
+-- /run if GetRealZoneText() == "Eye of the Storm" then if UnitFactionGroup("player") == "Alliance" then 
+-- SendChatMessage(".tele eots_alliance_graveyard", "GUILD") else SendChatMessage(".tele eots_horde_graveyard", "GUILD") end end
 
 -- ============================================================================
 -- PLAYER EDUCATION
@@ -118,11 +121,11 @@ frame:SetScript("OnUpdate", OnUpdate)
 -- Clean up stuck characters (run periodically)
 -- UPDATE characters 
 -- SET position_x = 2527.6, position_y = 1596.9, position_z = 1262.3, map = 566
--- WHERE map = 566 AND position_z < 1000 AND (SELECT race FROM characters WHERE guid = characters.guid) IN (1,3,4,7,11);  -- Alliance races
+-- WHERE map = 566 AND position_z < 1000 AND race IN (1,3,4,7,11);  -- Alliance races
 
 -- UPDATE characters 
 -- SET position_x = 1807.5, position_y = 1539.5, position_z = 1267.5, map = 566
--- WHERE map = 566 AND position_z < 1000 AND (SELECT race FROM characters WHERE guid = characters.guid) IN (2,5,6,8,9);  -- Horde races
+-- WHERE map = 566 AND position_z < 1000 AND race IN (2,5,6,8,9);  -- Horde races
 
 -- ============================================================================
 -- RECOMMENDATIONS

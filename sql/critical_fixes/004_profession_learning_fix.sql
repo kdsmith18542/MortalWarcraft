@@ -35,13 +35,12 @@ BEGIN
         773   -- Inscription
     );
     
-    -- If character has more than 2 primary professions, flag for manual review
+    -- If character has more than 2 primary professions, log to server console
     IF prof_count > 2 THEN
-        -- Log the issue
-        INSERT INTO gm_tickets (type, playerGuid, name, description, createTime)
-        VALUES (0, char_guid, 'PROFESSION_BUG', 
-                CONCAT('Character has ', prof_count, ' professions - exceeds limit of 2. Manual cleanup required.'),
-                UNIX_TIMESTAMP());
+        -- Log the issue (using a simple approach that doesn't require gm_tickets table)
+        -- Server logs will show this in the MySQL general log if enabled
+        -- Alternatively, you can create a custom logging table
+        SELECT CONCAT('WARNING: Character GUID ', char_guid, ' has ', prof_count, ' professions - exceeds limit of 2') AS profession_warning;
     END IF;
     
     -- Remove duplicate profession entries
@@ -71,6 +70,11 @@ FOR EACH ROW
 BEGIN
     DECLARE prof_count INT;
     DECLARE error_msg VARCHAR(255);
+    
+    -- Define primary profession IDs
+    -- Blacksmithing(164), Leatherworking(165), Alchemy(171), Herbalism(182), 
+    -- Mining(186), Tailoring(197), Engineering(202), Enchanting(333), 
+    -- Skinning(393), Jewelcrafting(755), Inscription(773)
     
     -- Check if the skill being added is a primary profession
     IF NEW.skill IN (164, 165, 171, 182, 186, 197, 202, 333, 393, 755, 773) THEN
