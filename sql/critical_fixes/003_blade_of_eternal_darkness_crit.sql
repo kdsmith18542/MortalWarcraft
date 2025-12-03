@@ -20,8 +20,10 @@
 -- Standard AzerothCore uses spell_dbc table
 
 -- Update spell_dbc if it exists (standard AzerothCore)
+-- AttributeEx2 flag 0x00000004 = SPELL_ATTR2_CANT_CRIT (prevents spell from landing critical hits)
+-- We remove this flag by using bitwise AND with its complement (~)
 UPDATE `spell_dbc` SET
-    `AttributesEx2` = `AttributesEx2` & ~0x00000004  -- Allow spell to crit
+    `AttributesEx2` = `AttributesEx2` & ~0x00000004  -- Remove SPELL_ATTR2_CANT_CRIT flag to allow crits
 WHERE `Id` IN (21978, 27860)
 AND EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name = 'spell_dbc');
 

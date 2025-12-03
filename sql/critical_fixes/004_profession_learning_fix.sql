@@ -44,12 +44,14 @@ BEGIN
     END IF;
     
     -- Remove duplicate profession entries
+    -- Note: Ensure indexes exist on character_skills(guid, skill, value) for performance
     DELETE cs1 FROM character_skills cs1
     INNER JOIN character_skills cs2 
     WHERE cs1.guid = char_guid
     AND cs2.guid = char_guid
     AND cs1.skill = cs2.skill
-    AND cs1.value < cs2.value;
+    AND cs1.value < cs2.value
+    LIMIT 100;  -- Process in batches to avoid locking
     
 END//
 
