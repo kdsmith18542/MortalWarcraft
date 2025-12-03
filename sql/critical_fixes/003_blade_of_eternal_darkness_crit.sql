@@ -16,21 +16,21 @@
 -- This requires modifying spell_dbc if using database-stored spells
 -- Note: This may require core modification if not handled in DB
 
--- Workaround: Add creature spell correction if using spell_template
-UPDATE `spell_template` SET
-    `AttributesEx2` = `AttributesEx2` & ~0x00000004  -- Remove SPELL_ATTR2_CANT_CRIT
-WHERE `Id` IN (21978, 27860);
+-- Check which table exists and update accordingly
+-- Standard AzerothCore uses spell_dbc table
 
--- Alternatively, if using spell_dbc table:
+-- Update spell_dbc if it exists (standard AzerothCore)
 UPDATE `spell_dbc` SET
     `AttributesEx2` = `AttributesEx2` & ~0x00000004  -- Allow spell to crit
-WHERE `Id` IN (21978, 27860);
+WHERE `Id` IN (21978, 27860)
+AND EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name = 'spell_dbc');
 
--- Ensure the damage is flat 100 (200 on crit) and not scaled
-UPDATE `spell_template` SET
-    `EffectBasePoints_1` = 99,  -- Base points (100 = 99 + 1)
-    `EffectBonusCoefficient_1` = 0  -- No spell power scaling
-WHERE `Id` IN (21978, 27860);
+-- For damage values, check if spell_dbc stores them
+UPDATE `spell_dbc` SET
+    `EffectBasePoints1` = 99,  -- Base points (100 = 99 + 1)
+    `EffectBonusMultiplier1` = 0  -- No spell power scaling
+WHERE `Id` IN (21978, 27860)
+AND EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name = 'spell_dbc');
 
 -- ============================================================================
 -- ALTERNATIVE APPROACH - Server Config
