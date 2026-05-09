@@ -108,6 +108,9 @@ core.*
 *.old
 *.orig
 
+# Build artifacts
+modules/mod-mortal/build/
+
 # Documentation that's redundant (keep main docs)
 docs/implementation/
 realm2/docs/

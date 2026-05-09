@@ -1,0 +1,141 @@
+-- ============================================================================
+-- Mortal Warcraft Overhaul - Character Database (Module Loader)
+-- Part of the mod-mortal AzerothCore module
+-- Source: sql/mortal/00_base/01_character_tables.sql
+-- ============================================================================
+
+-- Skills
+CREATE TABLE IF NOT EXISTS `character_mortal_skills` (
+    `guid` INT UNSIGNED NOT NULL,
+    `skill_id` INT UNSIGNED NOT NULL,
+    `value` INT UNSIGNED NOT NULL DEFAULT 0,
+    `max_value` INT UNSIGNED NOT NULL DEFAULT 100,
+    `state` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+    PRIMARY KEY (`guid`, `skill_id`),
+    INDEX `idx_guid_skill` (`guid`, `skill_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Attributes
+CREATE TABLE IF NOT EXISTS `character_mortal_attributes` (
+    `guid` INT UNSIGNED NOT NULL PRIMARY KEY,
+    `strength` INT UNSIGNED NOT NULL DEFAULT 0,
+    `agility` INT UNSIGNED NOT NULL DEFAULT 0,
+    `stamina` INT UNSIGNED NOT NULL DEFAULT 0,
+    `intellect` INT UNSIGNED NOT NULL DEFAULT 0,
+    `spirit` INT UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Regional Bank
+CREATE TABLE IF NOT EXISTS `character_regional_bank` (
+    `guid` INT UNSIGNED NOT NULL,
+    `zone_id` INT UNSIGNED NOT NULL,
+    `slot` TINYINT UNSIGNED NOT NULL,
+    `item_guid` INT UNSIGNED NOT NULL DEFAULT 0,
+    `item_entry` MEDIUMINT UNSIGNED NOT NULL DEFAULT 0,
+    `count` INT UNSIGNED NOT NULL DEFAULT 0,
+    PRIMARY KEY (`guid`, `zone_id`, `slot`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Criminal Flags
+CREATE TABLE IF NOT EXISTS `character_criminal_flags` (
+    `guid` INT UNSIGNED NOT NULL PRIMARY KEY,
+    `criminal_until` INT UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Notoriety
+CREATE TABLE IF NOT EXISTS `character_notoriety` (
+    `guid` INT UNSIGNED NOT NULL PRIMARY KEY,
+    `notoriety` INT NOT NULL DEFAULT 0,
+    `last_updated` INT UNSIGNED NOT NULL DEFAULT 0,
+    INDEX `idx_notoriety` (`notoriety`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Bounties
+CREATE TABLE IF NOT EXISTS `mortal_bounties` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `poster_guid` INT UNSIGNED NOT NULL,
+    `target_guid` INT UNSIGNED NOT NULL,
+    `bounty_amount` INT UNSIGNED NOT NULL DEFAULT 0,
+    `posted_at` INT UNSIGNED NOT NULL DEFAULT 0,
+    `is_claimed` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+    `claimed_by` INT UNSIGNED DEFAULT NULL,
+    `claimed_at` INT UNSIGNED DEFAULT NULL,
+    INDEX `idx_target_unclaimed` (`target_guid`, `is_claimed`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Derived Level Cache
+CREATE TABLE IF NOT EXISTS `character_derived_level` (
+    `guid` INT UNSIGNED NOT NULL PRIMARY KEY,
+    `derived_level` TINYINT UNSIGNED NOT NULL DEFAULT 1,
+    `total_skill_points` INT UNSIGNED NOT NULL DEFAULT 0,
+    `last_updated` INT UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Strongholds
+CREATE TABLE IF NOT EXISTS `mortal_strongholds` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `zone_id` INT UNSIGNED NOT NULL,
+    `owning_guild` INT UNSIGNED NOT NULL DEFAULT 0,
+    `claimed_at` INT UNSIGNED NOT NULL DEFAULT 0,
+    `pos_x` FLOAT NOT NULL DEFAULT 0,
+    `pos_y` FLOAT NOT NULL DEFAULT 0,
+    `pos_z` FLOAT NOT NULL DEFAULT 0,
+    `map_id` INT UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Guild Season Scores
+CREATE TABLE IF NOT EXISTS `mortal_guild_season_scores` (
+    `guild_id` INT UNSIGNED NOT NULL PRIMARY KEY,
+    `season` INT UNSIGNED NOT NULL DEFAULT 1,
+    `score` INT UNSIGNED NOT NULL DEFAULT 0,
+    `strongholds_held` INT UNSIGNED NOT NULL DEFAULT 0,
+    `sieges_won` INT UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Market Stalls
+CREATE TABLE IF NOT EXISTS `mortal_market_stalls` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `owner_guid` INT UNSIGNED NOT NULL,
+    `zone_id` INT UNSIGNED NOT NULL,
+    `rent_until` INT UNSIGNED NOT NULL DEFAULT 0,
+    `stall_name` VARCHAR(64) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Market Items
+CREATE TABLE IF NOT EXISTS `mortal_market_items` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `stall_id` INT UNSIGNED NOT NULL,
+    `item_entry` MEDIUMINT UNSIGNED NOT NULL,
+    `item_count` INT UNSIGNED NOT NULL DEFAULT 1,
+    `price_per_item` INT UNSIGNED NOT NULL DEFAULT 0,
+    `listed_at` INT UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Contracts
+CREATE TABLE IF NOT EXISTS `mortal_contracts` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `template_id` INT UNSIGNED NOT NULL,
+    `owner_guid` INT UNSIGNED NOT NULL,
+    `contractor_guid` INT UNSIGNED DEFAULT NULL,
+    `progress` INT UNSIGNED NOT NULL DEFAULT 0,
+    `target_count` INT UNSIGNED NOT NULL DEFAULT 0,
+    `time_remaining` INT UNSIGNED NOT NULL DEFAULT 0,
+    `completed` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+    `failed` TINYINT UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Feature Flags
+CREATE TABLE IF NOT EXISTS `mortal_feature_flags` (
+    `flag_name` VARCHAR(64) NOT NULL PRIMARY KEY,
+    `enabled` TINYINT UNSIGNED NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Analytics
+CREATE TABLE IF NOT EXISTS `mortal_log_events` (
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `event_type` VARCHAR(32) NOT NULL,
+    `player_guid` INT UNSIGNED DEFAULT NULL,
+    `zone_id` INT UNSIGNED DEFAULT NULL,
+    `data` TEXT DEFAULT NULL,
+    `created_at` INT UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

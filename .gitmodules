@@ -1,0 +1,5 @@
+[submodule "azerothcore"]
+	path = azerothcore
+	url = https://github.com/AzerothCore/azerothcore-wotlk.git
+	fetchRecurseSubmodules = true
+	ignore = dirty
