@@ -1,0 +1,44 @@
+#
+# Mortal Warcraft Overhaul - Module Configuration
+#
+
+[Mortal]
+# Feature flags - set to 0 to disable a system
+Notoriety.Enabled = 1
+Bounties.Enabled = 1
+Sieges.Enabled = 1
+Caravans.Enabled = 1
+Crafting.Enabled = 1
+RiskZones.Enabled = 1
+RegionalBanking.Enabled = 1
+DynamicEcosystem.Enabled = 1
+TaskBoard.Enabled = 1
+
+# Progression settings
+DerivedLevel.MaxLevel = 25
+DerivedLevel.SkillPointsPerLevel = 48
+Attribute.MaxPerStat = 150
+Attribute.MaxTotal = 400
+
+# Risk zone defaults
+RiskZone.DefaultTier = 0
+
+# Economy settings
+RegionalBank.MaxSlots = 100
+MarketStall.MaxItems = 20
+
+# PvP settings
+Notoriety.CriminalThreshold = 100
+Notoriety.OutlawThreshold = 500
+Notoriety.DecayInterval = 3600000
+Bounty.MinAmount = 1
+
+# Siege settings
+Siege.DefaultDuration = 3600
+
+# Caravan settings
+Caravan.DefaultHealth = 100
+Caravan.DefaultSpeed = 1.0
+
+# Contracts
+Contract.MaxPerPlayer = 5
