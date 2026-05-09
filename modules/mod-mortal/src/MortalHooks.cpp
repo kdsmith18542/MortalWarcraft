@@ -214,7 +214,6 @@ void MortalHooks::OnCreatureDeath(Creature* creature, Unit* killer)
 
 void MortalHooks::OnSpellCast(Player* player, Spell* spell, bool skipCheck)
 {
-    LOG_DEBUG("module", "mod-mortal: Player {} cast spell {}", player->GetName(), spell->m_spellInfo->Id);
 }
 
 uint32 MortalHooks::GetMortalDerivedLevel(Player* player)

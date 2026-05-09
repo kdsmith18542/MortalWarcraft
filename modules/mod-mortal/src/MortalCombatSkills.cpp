@@ -17,36 +17,8 @@ static std::unordered_map<uint32, std::unordered_map<uint32, SkillEntry>> s_play
 
 static const uint32 s_skillMaxValues[MORTAL_SKILL_COUNT] =
 {
-    100,   // Swords
-    100,   // Axes
-    100,   // Maces
-    100,   // Spears
-    100,   // Bows
-    100,   // Crossbows
-    100,   // Defense
-    100,   // Blocking
-    100,   // Parrying
-    100,   // Magic Arcane
-    100,   // Magic Fire
-    100,   // Magic Frost
-    100,   // Magic Shadow
-    100,   // Mining
-    100,   // Herbalism
-    100,   // Lumberjacking
-    100,   // Skinning
-    100,   // Fishing
-    100,   // Stealth
-    100,   // Lockpicking
-};
-
-static const char* s_skillNames[MORTAL_SKILL_COUNT] =
-{
-    "Swords", "Axes", "Maces", "Spears",
-    "Bows", "Crossbows",
-    "Defense", "Blocking", "Parrying",
-    "Arcane Magic", "Fire Magic", "Frost Magic", "Shadow Magic",
-    "Mining", "Herbalism", "Lumberjacking", "Skinning", "Fishing",
-    "Stealth", "Lockpicking"
+    100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
+    100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
 };
 
 void MortalCombatSkills::Load()
@@ -102,7 +74,6 @@ void MortalCombatSkills::GainSkill(Player* player, uint32 skillId, uint32 amount
 
     uint32 currentValue = GetSkillValue(player, skillId);
     uint32 maxVal = GetMaxSkillValue(skillId);
-
     if (currentValue >= maxVal)
         return;
 
@@ -115,22 +86,19 @@ void MortalCombatSkills::OnCombatKill(Player* player, Unit* victim)
     if (!victim || !victim->IsCreature())
         return;
 
-    uint32 skillGain = 1;
-    if (victim->getLevel() > player->GetLevel())
-        skillGain = 2;
+    uint32 skillGain = victim->getLevel() > player->GetLevel() ? 2 : 1;
 
     uint32 weaponSkill = MORTAL_SKILL_SWORDS;
     if (Item* mainHand = player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_MAINHAND))
     {
-        uint32 subClass = mainHand->GetTemplate()->SubClass;
-        switch (subClass)
+        switch (mainHand->GetTemplate()->SubClass)
         {
-            case ITEM_SUBCLASS_WEAPON_SWORD:     weaponSkill = MORTAL_SKILL_SWORDS; break;
-            case ITEM_SUBCLASS_WEAPON_AXE:       weaponSkill = MORTAL_SKILL_AXES; break;
-            case ITEM_SUBCLASS_WEAPON_MACE:      weaponSkill = MORTAL_SKILL_MACES; break;
-            case ITEM_SUBCLASS_WEAPON_POLEARM:   weaponSkill = MORTAL_SKILL_SPEARS; break;
-            case ITEM_SUBCLASS_WEAPON_BOW:       weaponSkill = MORTAL_SKILL_BOWS; break;
-            case ITEM_SUBCLASS_WEAPON_CROSSBOW:  weaponSkill = MORTAL_SKILL_CROSSBOWS; break;
+            case ITEM_SUBCLASS_WEAPON_SWORD:    weaponSkill = MORTAL_SKILL_SWORDS; break;
+            case ITEM_SUBCLASS_WEAPON_AXE:      weaponSkill = MORTAL_SKILL_AXES; break;
+            case ITEM_SUBCLASS_WEAPON_MACE:     weaponSkill = MORTAL_SKILL_MACES; break;
+            case ITEM_SUBCLASS_WEAPON_POLEARM:  weaponSkill = MORTAL_SKILL_SPEARS; break;
+            case ITEM_SUBCLASS_WEAPON_BOW:      weaponSkill = MORTAL_SKILL_BOWS; break;
+            case ITEM_SUBCLASS_WEAPON_CROSSBOW: weaponSkill = MORTAL_SKILL_CROSSBOWS; break;
         }
     }
 
@@ -165,8 +133,7 @@ void MortalCombatSkills::OnSpellCastSuccess(Player* player, uint32 spellSchool)
 
 uint32 MortalCombatSkills::GetMaxSkillValue(uint32 skillId)
 {
-    if (skillId >= MORTAL_SKILL_COUNT)
-        return 0;
+    if (skillId >= MORTAL_SKILL_COUNT) return 0;
     return s_skillMaxValues[skillId];
 }
 
@@ -201,14 +168,11 @@ void MortalCombatSkills::LoadSkillsFromDB(Player* player)
             uint32 value = fields[1].Get<uint32>();
             uint32 maxValue = fields[2].Get<uint32>();
             uint32 state = fields[3].Get<uint32>();
-
             s_playerSkills[guid][skillId] = { value, maxValue, state };
         } while (result->NextRow());
     }
 
     for (uint32 i = 0; i < MORTAL_SKILL_COUNT; ++i)
-    {
         if (s_playerSkills[guid].find(i) == s_playerSkills[guid].end())
             s_playerSkills[guid][i] = { 0, s_skillMaxValues[i], 0 };
-    }
 }

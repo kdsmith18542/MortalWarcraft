@@ -3,3 +3,15 @@
 	url = https://github.com/AzerothCore/azerothcore-wotlk.git
 	fetchRecurseSubmodules = true
 	ignore = dirty
+[submodule "realm2/azerothcore"]
+	path = realm2/azerothcore
+	url = https://github.com/AzerothCore/azerothcore-wotlk.git
+	ignore = dirty
+[submodule "tools/reference/cmangos-wotlk"]
+	path = tools/reference/cmangos-wotlk
+	url = https://github.com/cmangos/mangos-wotlk.git
+	ignore = dirty
+[submodule "tools/reference/trinitycore-scripts"]
+	path = tools/reference/trinitycore-scripts
+	url = https://github.com/TrinityCore/TrinityCore.git
+	ignore = dirty
