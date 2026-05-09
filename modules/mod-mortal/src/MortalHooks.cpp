@@ -125,6 +125,11 @@ public:
     }
 };
 
+void Addmod_mortalScripts()
+{
+    AddSC_mod_mortal();
+}
+
 void AddSC_mod_mortal()
 {
     new mod_mortal_WorldScript();
