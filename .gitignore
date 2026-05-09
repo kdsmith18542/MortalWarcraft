@@ -109,6 +109,10 @@ core.*
 *.orig
 
 # Documentation that's redundant (keep main docs)
+docs/implementation/
+realm2/docs/
+realm2/IMPLEMENTATION_SUMMARY.md
+realm2/SETUP_COMPLETE.md
 ABSOLUTE_FINAL_VERIFICATION.md
 ALL_IMPLEMENTATIONS_COMPLETE.md
 API_COMPATIBILITY_FIXES_NEEDED.md
