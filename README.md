@@ -34,8 +34,10 @@ Mortal Warcraft transforms the classic WoW experience into a hardcore survival M
 
 ```bash
 # Clone repository
-git clone <repository-url>
-cd wowpack
+git clone https://github.com/kdsmith18542/MortalWarcraft
+cd MortalWarcraft
+# Submodules (AzerothCore cores) are not checked out by default — fetch when ready to build:
+# git submodule update --init
 
 # Setup databases
 mysql -u root -p < sql/create_databases.sql
@@ -88,20 +90,18 @@ mortal start
 ## 📁 Project Structure
 
 ```
-wowpack/
-├── azerothcore/              # AzerothCore server
-│   ├── modules/
-│   │   └── mortal_overhaul/  # Custom module
-│   ├── src/                  # Core server code
-│   └── env/dist/             # Compiled binaries
-├── webportal/                # Web dashboard
-│   ├── backend/              # Go API server
-│   └── frontend/             # React frontend
-├── launcher/                 # Rust-based game launcher
-├── gameclientfiles/          # Client patches and addons
-├── sql/                      # Database migrations
-├── config/                    # Server configuration
-└── docs/                     # Documentation
+MortalWarcraft/
+├── azerothcore/              # AzerothCore core (git submodule, realm: mortal-overhaul)
+├── realm2/azerothcore/       # AzerothCore core (git submodule, realm: era-progression)
+├── modules/mod-mortal/       # Custom server module (skills, crafting, territory, siege…)
+├── addons/MortalUI/          # In-game custom UI addon suite
+├── launcher/                 # Tauri + Rust game launcher (manifest/DBC patching)
+├── webportal/                # Web dashboard (Go backend + React frontend)
+├── sql/                      # Database migrations (235 files)
+├── dbc_patches/              # DBC patch sources + MPQ build scripts
+├── tools/package_client/     # Builds gameclientfiles/ (gitignored build output)
+├── config/                   # Server configuration
+└── docs/                     # Design corpus (specs/, guides/, systems/)
 ```
 
 ## 🔧 Key Features
